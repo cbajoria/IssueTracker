@@ -35,7 +35,7 @@
             username="prajvi"
             password="prajvi"
             driverClassName="com.mysql.jdbc.Driver"
-            url="jdbc:mysql://YITRNG30DT:3306/issuetrackersystemdb"
+            url="jdbc:mysql://YITRNG30DT:3306/yitsdb"
             maxActive="100"
             maxIdle="30"
             maxWait="10000"/>
