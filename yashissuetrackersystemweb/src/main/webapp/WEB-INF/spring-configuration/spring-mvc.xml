@@ -35,7 +35,7 @@
 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basenames">
 			<list>
-				<value>/WEB-INF/i18n/</value>
+				<value>/WEB-INF/i18n/user</value>
 				
 			</list>
 		 </property>

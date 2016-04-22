@@ -38,6 +38,13 @@
 		<artifactId>spring-webmvc</artifactId>
 		<version>4.2.3.RELEASE</version>
 	</dependency>
+	<dependency>
+	<groupId>commons-configuration</groupId>
+	<artifactId>commons-configuration</artifactId>
+	<version>1.6</version>
+	</dependency>
+	
+	
     
     			<!-- hibernate -->
     <dependency>

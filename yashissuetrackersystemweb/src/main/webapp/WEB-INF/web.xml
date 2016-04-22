@@ -23,7 +23,6 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	
-	
 
 	<servlet>
 	<servlet-name>dispatcher</servlet-name>
@@ -40,6 +39,7 @@
 		<url-pattern>/web/*</url-pattern>
 	</servlet-mapping>
 
+	
 	
 	<!-- <error-page>
 		<error-code>404</error-code>
