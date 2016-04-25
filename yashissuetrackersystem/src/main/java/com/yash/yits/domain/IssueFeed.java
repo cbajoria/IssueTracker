@@ -12,7 +12,7 @@ import java.util.List;
  */
 @Entity
 @NamedQuery(name="Issuefeed.findAll", query="SELECT i FROM Issuefeed i")
-public class Issuefeed implements Serializable {
+public class IssueFeed implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -40,9 +40,9 @@ public class Issuefeed implements Serializable {
 
 	//bi-directional many-to-one association to Issuefeedcomment
 	@OneToMany(mappedBy="issuefeed")
-	private List<Issuefeedcomment> issuefeedcomments;
+	private List<IssueFeedComment> issuefeedcomments;
 
-	public Issuefeed() {
+	public IssueFeed() {
 	}
 
 	public int getIssuefeedId() {
@@ -85,22 +85,22 @@ public class Issuefeed implements Serializable {
 		this.issue = issue;
 	}
 
-	public List<Issuefeedcomment> getIssuefeedcomments() {
+	public List<IssueFeedComment> getIssuefeedcomments() {
 		return this.issuefeedcomments;
 	}
 
-	public void setIssuefeedcomments(List<Issuefeedcomment> issuefeedcomments) {
+	public void setIssuefeedcomments(List<IssueFeedComment> issuefeedcomments) {
 		this.issuefeedcomments = issuefeedcomments;
 	}
 
-	public Issuefeedcomment addIssuefeedcomment(Issuefeedcomment issuefeedcomment) {
+	public IssueFeedComment addIssuefeedcomment(IssueFeedComment issuefeedcomment) {
 		getIssuefeedcomments().add(issuefeedcomment);
 		issuefeedcomment.setIssuefeed(this);
 
 		return issuefeedcomment;
 	}
 
-	public Issuefeedcomment removeIssuefeedcomment(Issuefeedcomment issuefeedcomment) {
+	public IssueFeedComment removeIssuefeedcomment(IssueFeedComment issuefeedcomment) {
 		getIssuefeedcomments().remove(issuefeedcomment);
 		issuefeedcomment.setIssuefeed(null);
 

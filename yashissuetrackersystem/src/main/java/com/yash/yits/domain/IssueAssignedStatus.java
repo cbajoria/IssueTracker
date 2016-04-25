@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Entity
 @NamedQuery(name="Issueassignedstatus.findAll", query="SELECT i FROM Issueassignedstatus i")
-public class Issueassignedstatus implements Serializable {
+public class IssueAssignedStatus implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -26,7 +26,7 @@ public class Issueassignedstatus implements Serializable {
 	@OneToMany(mappedBy="issueassignedstatus")
 	private List<Issue> issues;
 
-	public Issueassignedstatus() {
+	public IssueAssignedStatus() {
 	}
 
 	public int getIssueassignmentStatusId() {

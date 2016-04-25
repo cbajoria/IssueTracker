@@ -52,11 +52,11 @@ public class User implements Serializable {
 
 	//bi-directional many-to-one association to Issuefeed
 	@OneToMany(mappedBy="user")
-	private List<Issuefeed> issuefeeds;
+	private List<IssueFeed> issuefeeds;
 
 	//bi-directional many-to-one association to Issuefeedcomment
 	@OneToMany(mappedBy="user")
-	private List<Issuefeedcomment> issuefeedcomments;
+	private List<IssueFeedComment> issuefeedcomments;
 
 	//bi-directional many-to-one association to Project
 	@OneToMany(mappedBy="user")
@@ -180,44 +180,44 @@ public class User implements Serializable {
 		return issue;
 	}
 
-	public List<Issuefeed> getIssuefeeds() {
+	public List<IssueFeed> getIssuefeeds() {
 		return this.issuefeeds;
 	}
 
-	public void setIssuefeeds(List<Issuefeed> issuefeeds) {
+	public void setIssuefeeds(List<IssueFeed> issuefeeds) {
 		this.issuefeeds = issuefeeds;
 	}
 
-	public Issuefeed addIssuefeed(Issuefeed issuefeed) {
+	public IssueFeed addIssuefeed(IssueFeed issuefeed) {
 		getIssuefeeds().add(issuefeed);
 		issuefeed.setUser(this);
 
 		return issuefeed;
 	}
 
-	public Issuefeed removeIssuefeed(Issuefeed issuefeed) {
+	public IssueFeed removeIssuefeed(IssueFeed issuefeed) {
 		getIssuefeeds().remove(issuefeed);
 		issuefeed.setUser(null);
 
 		return issuefeed;
 	}
 
-	public List<Issuefeedcomment> getIssuefeedcomments() {
+	public List<IssueFeedComment> getIssuefeedcomments() {
 		return this.issuefeedcomments;
 	}
 
-	public void setIssuefeedcomments(List<Issuefeedcomment> issuefeedcomments) {
+	public void setIssuefeedcomments(List<IssueFeedComment> issuefeedcomments) {
 		this.issuefeedcomments = issuefeedcomments;
 	}
 
-	public Issuefeedcomment addIssuefeedcomment(Issuefeedcomment issuefeedcomment) {
+	public IssueFeedComment addIssuefeedcomment(IssueFeedComment issuefeedcomment) {
 		getIssuefeedcomments().add(issuefeedcomment);
 		issuefeedcomment.setUser(this);
 
 		return issuefeedcomment;
 	}
 
-	public Issuefeedcomment removeIssuefeedcomment(Issuefeedcomment issuefeedcomment) {
+	public IssueFeedComment removeIssuefeedcomment(IssueFeedComment issuefeedcomment) {
 		getIssuefeedcomments().remove(issuefeedcomment);
 		issuefeedcomment.setUser(null);
 

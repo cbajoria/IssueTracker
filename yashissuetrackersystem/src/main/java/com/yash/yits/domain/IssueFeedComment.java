@@ -11,7 +11,7 @@ import java.util.Date;
  */
 @Entity
 @NamedQuery(name="Issuefeedcomment.findAll", query="SELECT i FROM Issuefeedcomment i")
-public class Issuefeedcomment implements Serializable {
+public class IssueFeedComment implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -35,9 +35,9 @@ public class Issuefeedcomment implements Serializable {
 	//bi-directional many-to-one association to Issuefeed
 	@ManyToOne
 	@JoinColumn(name="ISSUEFEED_ID")
-	private Issuefeed issuefeed;
+	private IssueFeed issuefeed;
 
-	public Issuefeedcomment() {
+	public IssueFeedComment() {
 	}
 
 	public int getIssuefeedcommentId() {
@@ -72,11 +72,11 @@ public class Issuefeedcomment implements Serializable {
 		this.user = user;
 	}
 
-	public Issuefeed getIssuefeed() {
+	public IssueFeed getIssuefeed() {
 		return this.issuefeed;
 	}
 
-	public void setIssuefeed(Issuefeed issuefeed) {
+	public void setIssuefeed(IssueFeed issuefeed) {
 		this.issuefeed = issuefeed;
 	}
 
