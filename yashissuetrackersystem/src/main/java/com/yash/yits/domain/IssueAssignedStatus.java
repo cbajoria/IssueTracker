@@ -10,39 +10,39 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Issueassignedstatus.findAll", query="SELECT i FROM Issueassignedstatus i")
+@NamedQuery(name="IssueAssignedStatus.findAll", query="SELECT i FROM IssueAssignedStatus i")
 public class IssueAssignedStatus implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ISSUEASSIGNMENT_STATUS_ID")
-	private int issueassignmentStatusId;
+	private int issueAssignmentStatusId;
 
 	@Column(name="ISSUEASSIGNMENT_STATUS")
-	private String issueassignmentStatus;
+	private String issueAssignmentStatus;
 
 	//bi-directional many-to-one association to Issue
-	@OneToMany(mappedBy="issueassignedstatus")
+	@OneToMany(mappedBy="issueAssignedStatus")
 	private List<Issue> issues;
 
 	public IssueAssignedStatus() {
 	}
 
-	public int getIssueassignmentStatusId() {
-		return this.issueassignmentStatusId;
+	public int getIssueAssignmentStatusId() {
+		return this.issueAssignmentStatusId;
 	}
 
-	public void setIssueassignmentStatusId(int issueassignmentStatusId) {
-		this.issueassignmentStatusId = issueassignmentStatusId;
+	public void setIssueassignmentStatusId(int issueAssignmentStatusId) {
+		this.issueAssignmentStatusId = issueAssignmentStatusId;
 	}
 
 	public String getIssueassignmentStatus() {
-		return this.issueassignmentStatus;
+		return this.issueAssignmentStatus;
 	}
 
-	public void setIssueassignmentStatus(String issueassignmentStatus) {
-		this.issueassignmentStatus = issueassignmentStatus;
+	public void setIssueassignmentStatus(String issueAssignmentStatus) {
+		this.issueAssignmentStatus = issueAssignmentStatus;
 	}
 
 	public List<Issue> getIssues() {
@@ -55,14 +55,14 @@ public class IssueAssignedStatus implements Serializable {
 
 	public Issue addIssue(Issue issue) {
 		getIssues().add(issue);
-		issue.setIssueassignedstatus(this);
+		issue.setIssueAssignedStatus(this);
 
 		return issue;
 	}
 
 	public Issue removeIssue(Issue issue) {
 		getIssues().remove(issue);
-		issue.setIssueassignedstatus(null);
+		issue.setIssueAssignedStatus(null);
 
 		return issue;
 	}

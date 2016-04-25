@@ -10,39 +10,39 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Issuepriority.findAll", query="SELECT i FROM Issuepriority i")
+@NamedQuery(name="IssuePriority.findAll", query="SELECT i FROM IssuePriority i")
 public class IssuePriority implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ISSUEPRIORITY_ID")
-	private int issuepriorityId;
+	private int issuePriorityId;
 
 	@Column(name="ISSUEPRIORITY_TYPE")
-	private String issuepriorityType;
+	private String issuePriorityType;
 
 	//bi-directional many-to-one association to Issue
-	@OneToMany(mappedBy="issuepriority")
+	@OneToMany(mappedBy="issuePriority")
 	private List<Issue> issues;
 
 	public IssuePriority() {
 	}
 
-	public int getIssuepriorityId() {
-		return this.issuepriorityId;
+	public int getIssuePriorityId() {
+		return this.issuePriorityId;
 	}
 
-	public void setIssuepriorityId(int issuepriorityId) {
-		this.issuepriorityId = issuepriorityId;
+	public void setIssuePriorityId(int issuePriorityId) {
+		this.issuePriorityId = issuePriorityId;
 	}
 
-	public String getIssuepriorityType() {
-		return this.issuepriorityType;
+	public String getIssuePriorityType() {
+		return this.issuePriorityType;
 	}
 
-	public void setIssuepriorityType(String issuepriorityType) {
-		this.issuepriorityType = issuepriorityType;
+	public void setIssuePriorityType(String issuePriorityType) {
+		this.issuePriorityType = issuePriorityType;
 	}
 
 	public List<Issue> getIssues() {
@@ -55,14 +55,14 @@ public class IssuePriority implements Serializable {
 
 	public Issue addIssue(Issue issue) {
 		getIssues().add(issue);
-		issue.setIssuepriority(this);
+		issue.setIssuePriority(this);
 
 		return issue;
 	}
 
 	public Issue removeIssue(Issue issue) {
 		getIssues().remove(issue);
-		issue.setIssuepriority(null);
+		issue.setIssuePriority(null);
 
 		return issue;
 	}

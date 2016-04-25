@@ -52,11 +52,11 @@ public class User implements Serializable {
 
 	//bi-directional many-to-one association to Issuefeed
 	@OneToMany(mappedBy="user")
-	private List<IssueFeed> issuefeeds;
+	private List<IssueFeed> issueFeeds;
 
 	//bi-directional many-to-one association to Issuefeedcomment
 	@OneToMany(mappedBy="user")
-	private List<IssueFeedComment> issuefeedcomments;
+	private List<IssueFeedComment> issueFeedComments;
 
 	//bi-directional many-to-one association to Project
 	@OneToMany(mappedBy="user")
@@ -180,48 +180,48 @@ public class User implements Serializable {
 		return issue;
 	}
 
-	public List<IssueFeed> getIssuefeeds() {
-		return this.issuefeeds;
+	public List<IssueFeed> getIssueFeeds() {
+		return this.issueFeeds;
 	}
 
-	public void setIssuefeeds(List<IssueFeed> issuefeeds) {
-		this.issuefeeds = issuefeeds;
+	public void setIssueFeeds(List<IssueFeed> issueFeeds) {
+		this.issueFeeds = issueFeeds;
 	}
 
-	public IssueFeed addIssuefeed(IssueFeed issuefeed) {
-		getIssuefeeds().add(issuefeed);
-		issuefeed.setUser(this);
+	public IssueFeed addIssueFeed(IssueFeed issueFeed) {
+		getIssueFeeds().add(issueFeed);
+		issueFeed.setUser(this);
 
-		return issuefeed;
+		return issueFeed;
 	}
 
-	public IssueFeed removeIssuefeed(IssueFeed issuefeed) {
-		getIssuefeeds().remove(issuefeed);
-		issuefeed.setUser(null);
+	public IssueFeed removeIssuefeed(IssueFeed issueFeed) {
+		getIssueFeeds().remove(issueFeed);
+		issueFeed.setUser(null);
 
-		return issuefeed;
+		return issueFeed;
 	}
 
-	public List<IssueFeedComment> getIssuefeedcomments() {
-		return this.issuefeedcomments;
+	public List<IssueFeedComment> getIssueFeedComments() {
+		return this.issueFeedComments;
 	}
 
-	public void setIssuefeedcomments(List<IssueFeedComment> issuefeedcomments) {
-		this.issuefeedcomments = issuefeedcomments;
+	public void setIssueFeedComments(List<IssueFeedComment> issueFeedComments) {
+		this.issueFeedComments = issueFeedComments;
 	}
 
-	public IssueFeedComment addIssuefeedcomment(IssueFeedComment issuefeedcomment) {
-		getIssuefeedcomments().add(issuefeedcomment);
-		issuefeedcomment.setUser(this);
+	public IssueFeedComment addIssuefeedcomment(IssueFeedComment issueFeedComment) {
+		getIssueFeedComments().add(issueFeedComment);
+		issueFeedComment.setUser(this);
 
-		return issuefeedcomment;
+		return issueFeedComment;
 	}
 
-	public IssueFeedComment removeIssuefeedcomment(IssueFeedComment issuefeedcomment) {
-		getIssuefeedcomments().remove(issuefeedcomment);
-		issuefeedcomment.setUser(null);
+	public IssueFeedComment removeIssuefeedcomment(IssueFeedComment issueFeedComment) {
+		getIssueFeedComments().remove(issueFeedComment);
+		issueFeedComment.setUser(null);
 
-		return issuefeedcomment;
+		return issueFeedComment;
 	}
 
 	public List<Project> getProjects1() {

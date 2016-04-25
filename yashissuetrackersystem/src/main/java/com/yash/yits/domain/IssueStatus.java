@@ -10,39 +10,39 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Issuestatus.findAll", query="SELECT i FROM Issuestatus i")
+@NamedQuery(name="IssueStatus.findAll", query="SELECT i FROM IssueStatus i")
 public class IssueStatus implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ISSUESTATUS_ID")
-	private int issuestatusId;
+	private int issueStatusId;
 
 	@Column(name="ISSUESTATUS_TYPE")
-	private String issuestatusType;
+	private String issueStatusType;
 
 	//bi-directional many-to-one association to Issue
-	@OneToMany(mappedBy="issuestatus")
+	@OneToMany(mappedBy="issueStatus")
 	private List<Issue> issues;
 
 	public IssueStatus() {
 	}
 
-	public int getIssuestatusId() {
-		return this.issuestatusId;
+	public int getIssueStatusId() {
+		return this.issueStatusId;
 	}
 
-	public void setIssuestatusId(int issuestatusId) {
-		this.issuestatusId = issuestatusId;
+	public void setIssueStatusId(int issueStatusId) {
+		this.issueStatusId = issueStatusId;
 	}
 
-	public String getIssuestatusType() {
-		return this.issuestatusType;
+	public String getIssueStatusType() {
+		return this.issueStatusType;
 	}
 
-	public void setIssuestatusType(String issuestatusType) {
-		this.issuestatusType = issuestatusType;
+	public void setIssueStatusType(String issueStatusType) {
+		this.issueStatusType = issueStatusType;
 	}
 
 	public List<Issue> getIssues() {
@@ -55,14 +55,14 @@ public class IssueStatus implements Serializable {
 
 	public Issue addIssue(Issue issue) {
 		getIssues().add(issue);
-		issue.setIssuestatus(this);
+		issue.setIssueStatus(this);
 
 		return issue;
 	}
 
 	public Issue removeIssue(Issue issue) {
 		getIssues().remove(issue);
-		issue.setIssuestatus(null);
+		issue.setIssueStatus(null);
 
 		return issue;
 	}

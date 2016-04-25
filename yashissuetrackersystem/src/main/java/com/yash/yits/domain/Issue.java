@@ -18,37 +18,41 @@ public class Issue implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ISSUEDETAIL_ID")
-	private int issuedetailId;
+	private int issueDetailId;
 
 	@Column(name="ISSUE_AFFECTEDVERSION")
-	private String issueAffectedversion;
+	private String issueAffectedVersion;
 
 	@Column(name="ISSUE_COMPONENT")
 	private String issueComponent;
 
 	@Column(name="ISSUE_DESCRIPTION")
 	private String issueDescription;
-
+	
+	@Temporal(TemporalType.DATE)
+	@Column(name="ISSUE_CREATIONDATE")
+	private Date issueCreationDate;
+	
 	@Temporal(TemporalType.DATE)
 	@Column(name="ISSUE_DUEDATE")
-	private Date issueDuedate;
+	private Date issueDueDate;
 
 	@Column(name="ISSUE_ENVIRONMENT")
 	private String issueEnvironment;
 
 	@Column(name="ISSUE_ORIGINALESTIMATE")
-	private int issueOriginalestimate;
+	private int issueOriginalEstimate;
 
 	@Column(name="ISSUE_REMAININGESTIMATE")
-	private int issueRemainingestimate;
+	private int issueRemainingEstimate;
 
 	@Column(name="ISSUE_SUMMARY")
 	private String issueSummary;
 
-	//bi-directional many-to-one association to Issueassignedstatus
+	//bi-directional many-to-one association to IssueAssignedStatus
 	@ManyToOne
 	@JoinColumn(name="ISSUEASSIGNED_STATUS")
-	private IssueAssignedStatus issueassignedstatus;
+	private IssueAssignedStatus issueAssignedStatus;
 
 	//bi-directional many-to-one association to User
 	@ManyToOne
@@ -58,7 +62,7 @@ public class Issue implements Serializable {
 	//bi-directional many-to-one association to Issuetype
 	@ManyToOne
 	@JoinColumn(name="ISSUE_TYPE_ID")
-	private IssueType issuetype;
+	private IssueType issueType;
 
 	//bi-directional many-to-one association to Project
 	@ManyToOne
@@ -68,12 +72,12 @@ public class Issue implements Serializable {
 	//bi-directional many-to-one association to Issuepriority
 	@ManyToOne
 	@JoinColumn(name="ISSUE_PRIORITY_ID")
-	private IssuePriority issuepriority;
+	private IssuePriority issuePriority;
 
 	//bi-directional many-to-one association to Issuestatus
 	@ManyToOne
 	@JoinColumn(name="ISSUE_STATUS_ID")
-	private IssueStatus issuestatus;
+	private IssueStatus issueStatus;
 
 	//bi-directional many-to-many association to Attachment
 	@ManyToMany(mappedBy="issues")
@@ -81,25 +85,25 @@ public class Issue implements Serializable {
 
 	//bi-directional many-to-one association to Issuefeed
 	@OneToMany(mappedBy="issue")
-	private List<IssueFeed> issuefeeds;
+	private List<IssueFeed> issueFeeds;
 
 	public Issue() {
 	}
 
-	public int getIssuedetailId() {
-		return this.issuedetailId;
+	public int getIssueDetailId() {
+		return this.issueDetailId;
 	}
 
-	public void setIssuedetailId(int issuedetailId) {
-		this.issuedetailId = issuedetailId;
+	public void setIssueDetailId(int issueDetailId) {
+		this.issueDetailId = issueDetailId;
 	}
 
-	public String getIssueAffectedversion() {
-		return this.issueAffectedversion;
+	public String getIssueAffectedVersion() {
+		return this.issueAffectedVersion;
 	}
 
-	public void setIssueAffectedversion(String issueAffectedversion) {
-		this.issueAffectedversion = issueAffectedversion;
+	public void setIssueAffectedVersion(String issueAffectedVersion) {
+		this.issueAffectedVersion = issueAffectedVersion;
 	}
 
 	public String getIssueComponent() {
@@ -117,13 +121,21 @@ public class Issue implements Serializable {
 	public void setIssueDescription(String issueDescription) {
 		this.issueDescription = issueDescription;
 	}
-
-	public Date getIssueDuedate() {
-		return this.issueDuedate;
+	
+	public Date getIssueCreationDate() {
+		return this.issueCreationDate;
 	}
 
-	public void setIssueDuedate(Date issueDuedate) {
-		this.issueDuedate = issueDuedate;
+	public void setIssueCreationDate(Date issueCreationDate) {
+		this.issueCreationDate = issueCreationDate;
+	}
+
+	public Date getIssueDueDate() {
+		return this.issueDueDate;
+	}
+
+	public void setIssueDueDate(Date issueDueDate) {
+		this.issueDueDate = issueDueDate;
 	}
 
 	public String getIssueEnvironment() {
@@ -134,20 +146,20 @@ public class Issue implements Serializable {
 		this.issueEnvironment = issueEnvironment;
 	}
 
-	public int getIssueOriginalestimate() {
-		return this.issueOriginalestimate;
+	public int getIssueOriginalEstimate() {
+		return this.issueOriginalEstimate;
 	}
 
-	public void setIssueOriginalestimate(int issueOriginalestimate) {
-		this.issueOriginalestimate = issueOriginalestimate;
+	public void setIssueOriginalEstimate(int issueOriginalEstimate) {
+		this.issueOriginalEstimate = issueOriginalEstimate;
 	}
 
-	public int getIssueRemainingestimate() {
-		return this.issueRemainingestimate;
+	public int getIssueRemainingEstimate() {
+		return this.issueRemainingEstimate;
 	}
 
-	public void setIssueRemainingestimate(int issueRemainingestimate) {
-		this.issueRemainingestimate = issueRemainingestimate;
+	public void setIssueRemainingEstimate(int issueRemainingEstimate) {
+		this.issueRemainingEstimate = issueRemainingEstimate;
 	}
 
 	public String getIssueSummary() {
@@ -159,11 +171,11 @@ public class Issue implements Serializable {
 	}
 
 	public IssueAssignedStatus getIssueassignedstatus() {
-		return this.issueassignedstatus;
+		return this.issueAssignedStatus;
 	}
 
-	public void setIssueassignedstatus(IssueAssignedStatus issueassignedstatus) {
-		this.issueassignedstatus = issueassignedstatus;
+	public void setIssueAssignedStatus(IssueAssignedStatus issueAssignedStatus) {
+		this.issueAssignedStatus = issueAssignedStatus;
 	}
 
 	public User getUser() {
@@ -174,12 +186,12 @@ public class Issue implements Serializable {
 		this.user = user;
 	}
 
-	public IssueType getIssuetype() {
-		return this.issuetype;
+	public IssueType getIssueType() {
+		return this.issueType;
 	}
 
-	public void setIssuetype(IssueType issuetype) {
-		this.issuetype = issuetype;
+	public void setIssueType(IssueType issueType) {
+		this.issueType = issueType;
 	}
 
 	public Project getProject() {
@@ -190,20 +202,20 @@ public class Issue implements Serializable {
 		this.project = project;
 	}
 
-	public IssuePriority getIssuepriority() {
-		return this.issuepriority;
+	public IssuePriority getIssuePriority() {
+		return this.issuePriority;
 	}
 
-	public void setIssuepriority(IssuePriority issuepriority) {
-		this.issuepriority = issuepriority;
+	public void setIssuePriority(IssuePriority issuePriority) {
+		this.issuePriority = issuePriority;
 	}
 
-	public IssueStatus getIssuestatus() {
-		return this.issuestatus;
+	public IssueStatus getIssueStatus() {
+		return this.issueStatus;
 	}
 
-	public void setIssuestatus(IssueStatus issuestatus) {
-		this.issuestatus = issuestatus;
+	public void setIssueStatus(IssueStatus issueStatus) {
+		this.issueStatus = issueStatus;
 	}
 
 	public List<Attachment> getAttachments() {
@@ -214,26 +226,26 @@ public class Issue implements Serializable {
 		this.attachments = attachments;
 	}
 
-	public List<IssueFeed> getIssuefeeds() {
-		return this.issuefeeds;
+	public List<IssueFeed> getIssueFeeds() {
+		return this.issueFeeds;
 	}
 
-	public void setIssuefeeds(List<IssueFeed> issuefeeds) {
-		this.issuefeeds = issuefeeds;
+	public void setIssueFeeds(List<IssueFeed> issueFeeds) {
+		this.issueFeeds = issueFeeds;
 	}
 
-	public IssueFeed addIssuefeed(IssueFeed issuefeed) {
-		getIssuefeeds().add(issuefeed);
-		issuefeed.setIssue(this);
+	public IssueFeed addIssueFeed(IssueFeed issueFeed) {
+		getIssueFeeds().add(issueFeed);
+		issueFeed.setIssue(this);
 
-		return issuefeed;
+		return issueFeed;
 	}
 
-	public IssueFeed removeIssuefeed(IssueFeed issuefeed) {
-		getIssuefeeds().remove(issuefeed);
-		issuefeed.setIssue(null);
+	public IssueFeed removeIssueFeed(IssueFeed issueFeed) {
+		getIssueFeeds().remove(issueFeed);
+		issueFeed.setIssue(null);
 
-		return issuefeed;
+		return issueFeed;
 	}
 
 }

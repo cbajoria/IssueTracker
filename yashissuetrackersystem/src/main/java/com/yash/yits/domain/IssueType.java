@@ -10,7 +10,7 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Issuetype.findAll", query="SELECT i FROM Issuetype i")
+@NamedQuery(name="Issuetype.findAll", query="SELECT i FROM IssueType i")
 public class IssueType implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -23,7 +23,7 @@ public class IssueType implements Serializable {
 	private String issueType;
 
 	//bi-directional many-to-one association to Issue
-	@OneToMany(mappedBy="issuetype")
+	@OneToMany(mappedBy="issueType")
 	private List<Issue> issues;
 
 	public IssueType() {
@@ -55,14 +55,14 @@ public class IssueType implements Serializable {
 
 	public Issue addIssue(Issue issue) {
 		getIssues().add(issue);
-		issue.setIssuetype(this);
+		issue.setIssueType(this);
 
 		return issue;
 	}
 
 	public Issue removeIssue(Issue issue) {
 		getIssues().remove(issue);
-		issue.setIssuetype(null);
+		issue.setIssueType(null);
 
 		return issue;
 	}

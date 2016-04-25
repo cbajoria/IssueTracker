@@ -10,22 +10,22 @@ import java.util.Date;
  * 
  */
 @Entity
-@NamedQuery(name="Issuefeedcomment.findAll", query="SELECT i FROM Issuefeedcomment i")
+@NamedQuery(name="IssueFeedComment.findAll", query="SELECT i FROM IssueFeedComment i")
 public class IssueFeedComment implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ISSUEFEEDCOMMENT_ID")
-	private int issuefeedcommentId;
+	private int issueFeedCommentId;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="ISSUEFEEDCOMMENT_DATE")
-	private Date issuefeedcommentDate;
+	private Date issueFeedCommentDate;
 
 	@Lob
 	@Column(name="ISSUEFEEDCOMMENT_DESCRIPTION")
-	private String issuefeedcommentDescription;
+	private String issueFeedCommentDescription;
 
 	//bi-directional many-to-one association to User
 	@ManyToOne
@@ -35,33 +35,33 @@ public class IssueFeedComment implements Serializable {
 	//bi-directional many-to-one association to Issuefeed
 	@ManyToOne
 	@JoinColumn(name="ISSUEFEED_ID")
-	private IssueFeed issuefeed;
+	private IssueFeed issueFeed;
 
 	public IssueFeedComment() {
 	}
 
-	public int getIssuefeedcommentId() {
-		return this.issuefeedcommentId;
+	public int getIssueFeedCommentId() {
+		return this.issueFeedCommentId;
 	}
 
-	public void setIssuefeedcommentId(int issuefeedcommentId) {
-		this.issuefeedcommentId = issuefeedcommentId;
+	public void setIssuefeedcommentId(int issueFeedCommentId) {
+		this.issueFeedCommentId = issueFeedCommentId;
 	}
 
-	public Date getIssuefeedcommentDate() {
-		return this.issuefeedcommentDate;
+	public Date getIssueFeedCommentDate() {
+		return this.issueFeedCommentDate;
 	}
 
-	public void setIssuefeedcommentDate(Date issuefeedcommentDate) {
-		this.issuefeedcommentDate = issuefeedcommentDate;
+	public void setIssuefeedcommentDate(Date issueFeedCommentDate) {
+		this.issueFeedCommentDate = issueFeedCommentDate;
 	}
 
-	public String getIssuefeedcommentDescription() {
-		return this.issuefeedcommentDescription;
+	public String getIssueFeedCommentDescription() {
+		return this.issueFeedCommentDescription;
 	}
 
-	public void setIssuefeedcommentDescription(String issuefeedcommentDescription) {
-		this.issuefeedcommentDescription = issuefeedcommentDescription;
+	public void setIssueFeedCommentDescription(String issueFeedCommentDescription) {
+		this.issueFeedCommentDescription = issueFeedCommentDescription;
 	}
 
 	public User getUser() {
@@ -72,12 +72,12 @@ public class IssueFeedComment implements Serializable {
 		this.user = user;
 	}
 
-	public IssueFeed getIssuefeed() {
-		return this.issuefeed;
+	public IssueFeed getIssueFeed() {
+		return this.issueFeed;
 	}
 
-	public void setIssuefeed(IssueFeed issuefeed) {
-		this.issuefeed = issuefeed;
+	public void setIssueFeed(IssueFeed issueFeed) {
+		this.issueFeed = issueFeed;
 	}
 
 }
