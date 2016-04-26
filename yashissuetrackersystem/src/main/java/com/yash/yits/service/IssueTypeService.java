@@ -1,6 +1,6 @@
 package com.yash.yits.service;
 
-import com.yash.yits.domain.IssueType;
+import com.yash.yits.form.IssueTypeForm;
 
 /**
  * 
@@ -13,5 +13,5 @@ public interface IssueTypeService {
 	 * Save IssueType received from controller by calling the IssueTypeDaoImpl Object.
 	 * @param issueType
 	 */
-	public void saveIssueType(IssueType issueType);
+	public void saveIssueType(IssueTypeForm issueTypeForm);
 }

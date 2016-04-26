@@ -38,8 +38,11 @@ public class IssueTypeServiceImpl implements IssueTypeService {
 	
 	private final Logger logger=LoggerFactory.getLogger(IssueTypeServiceImpl.class);
 	
-	public void saveIssueType(IssueType issueType) {
+	public void saveIssueType(IssueTypeForm issueTypeForm) {
 		logger.info("inside saveIssueType() of IssueTypeServiceImpl");
+		
+		IssueType issueType =  new IssueType();
+		issueType.setIssueType(issueTypeForm.getIssueType());
 		issueTypeDao.saveIssueType(issueType);
 
 	}

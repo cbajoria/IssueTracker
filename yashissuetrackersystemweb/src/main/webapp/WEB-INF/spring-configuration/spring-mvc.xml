@@ -24,6 +24,8 @@
 	<context:component-scan base-package="com.yash.yits.controller" />
 	<mvc:annotation-driven />
 	
+	<!-- this locates folders for external resources -->
+	<mvc:resources location="/components/" mapping="/components/**"/>
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:order="0">
@@ -36,6 +38,7 @@
 		<property name="basenames">
 			<list>
 				<value>/WEB-INF/i18n/user</value>
+				<value>/WEB-INF/i18n/issue</value>
 				
 			</list>
 		 </property>

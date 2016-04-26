@@ -32,10 +32,10 @@
 	<Resource name="jdbc/issuetrackerDB"
             auth="Container"
             type="javax.sql.DataSource"
-            username="prajvi"
-            password="prajvi"
+            username="root"
+            password="root"
             driverClassName="com.mysql.jdbc.Driver"
-            url="jdbc:mysql://YITRNG30DT:3306/yitsdb"
+            url="jdbc:mysql://localhost:3306/yitsdb"
             maxActive="100"
             maxIdle="30"
             maxWait="10000"/>

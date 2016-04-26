@@ -2,8 +2,10 @@ package com.yash.yits.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yash.yits.form.IssueTypeForm;
 import com.yash.yits.service.IssueTypeService;
@@ -25,10 +27,24 @@ public class IssueTypeController {
 	 */
 	@Autowired
 	private IssueTypeService issueTypeService;
-	@RequestMapping("/showIssueTypeForm.htm")
-	public String showIssueTypeForm(Model model){
-		IssueTypeForm issueTypeForm=new IssueTypeForm();
-		model.addAttribute("issueTypeForm", issueTypeForm);
+	
+	
+	@RequestMapping("/welcome.htm")
+	public String welcomeView(){
+		return "welcome";
+	}
+	
+	@RequestMapping(value="/showIssueTypeForm.htm",method=RequestMethod.GET)
+	public String showIssueTypeForm(){
+		
 		return "issueTypeForm";
+	}
+	
+	@RequestMapping(value="/addIssueType.htm",method=RequestMethod.POST)
+	@ResponseBody
+	public String addIssueType(@RequestBody IssueTypeForm issueTypeForm){
+	
+		issueTypeService.saveIssueType(issueTypeForm);
+		return "Issue Type : "+issueTypeForm.getIssueType()+" added.";
 	}
 }

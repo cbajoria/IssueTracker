@@ -3,8 +3,7 @@
 <center>
 <h2>Welcome to Issue Tracker System!</h2>
 <br>
-<a href="issuetype/showIssueTypeForm.htm">Add Issue Type</a>
-
+	<jsp:forward page="./issuetype/welcome.htm"></jsp:forward>
 </center>
 </body>
 </html>

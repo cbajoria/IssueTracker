@@ -1,27 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	
 <center>
-	<form action="saveIssueType.htm" method="post">
-	<table>
-		<tr>
-			<td>Issue type</td>
-			<td><input type="text" name="issueType"/></td>
-		</tr>
-		<tr>
-		</tr>
-			<td colspan="2" style="text-align: right;"><input type="submit" value="Add"/></td>
-		</tr>
-		
-	</table>
-		
-	</form>
+<form role="form" ng-submit="ic.add()">
+	
+		<div class="form-group">
+			<spring:message code="issue.issueType"/>
+			<input type="text" ng-model="ic.issueTypeForm.issueType"/>
+		</div>
+		<div class="form-group">
+			<input type="submit" value="<spring:message code="issue.save"/>" class="btn btn-default"/>
+		</div>
+
+</form>
 </center>
-</body>
-</html>
