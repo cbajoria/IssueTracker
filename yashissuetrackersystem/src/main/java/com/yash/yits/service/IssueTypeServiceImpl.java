@@ -41,8 +41,9 @@ public class IssueTypeServiceImpl implements IssueTypeService {
 	public void saveIssueType(IssueTypeForm issueTypeForm) {
 		logger.info("inside saveIssueType() of IssueTypeServiceImpl");
 		
-		IssueType issueType =  new IssueType();
-		issueType.setIssueType(issueTypeForm.getIssueType());
+		/*form mapped to domain*/
+		IssueType issueType = mapper.map(issueTypeForm, IssueType.class);
+		
 		issueTypeDao.saveIssueType(issueType);
 
 	}
