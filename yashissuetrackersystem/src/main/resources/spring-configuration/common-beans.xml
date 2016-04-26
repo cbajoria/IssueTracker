@@ -44,6 +44,12 @@
 	<!-- <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"	p:configLocation="config/ehcache.xml" />
 	
 	<ehcache:config cache-manager="cacheManager"></ehcache:config> -->
+	
+	<!-- Dozer Mapping for mapping one class into another -->
+		<bean class="org.dozer.spring.DozerBeanMapperFactoryBean">
+			<property name="mappingFiles" value="classpath*:/dozer-mapping/issue-mapping.xml"></property>
+		</bean>
+		<bean class="org.dozer.DozerBeanMapper"/>
 
 
 </beans>

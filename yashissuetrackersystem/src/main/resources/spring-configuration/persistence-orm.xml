@@ -19,10 +19,13 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
+		<!-- refering the datasource which is configured in the context.xml of tomcat server by "jndi-name" -->
+		<jee:jndi-lookup id="dataSource" jndi-name="jdbc/issuetrackerDB" />
+		
 		<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 
-		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="com.yash.yits.model" />
+		<property name="dataSource" ref="dataSource" /> <!-- Refering to data source -->
+		<property name="packagesToScan" value="com.yash.yits.domain" /> <!-- domain packate to scan to provide mapping object -->
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
@@ -32,6 +35,6 @@
 		</property>
 	</bean>
 
-	<jee:jndi-lookup id="dataSource" jndi-name="jdbc/issuetrackerDB" />
+	
 
 </beans>

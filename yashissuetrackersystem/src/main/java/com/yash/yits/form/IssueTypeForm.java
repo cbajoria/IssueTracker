@@ -6,9 +6,28 @@ package com.yash.yits.form;
  */
 public class IssueTypeForm {
 	/**
+	 * id of the issue type
+	 */
+	private int issueId;
+	/**
 	 * Name of the issue type
 	 */
 	private String issueType;
+	/**
+	 * 	
+	 * @return issueID
+	 * getter of issue id
+	 */
+	public int getIssueId() {
+		return issueId;
+	}
+	/**
+	 * setter of isse id
+	 * @param issueId
+	 */
+	public void setIssueId(int issueId) {
+		this.issueId = issueId;
+	}
 	/**
 	 * getter of issue type
 	 * @return issueType

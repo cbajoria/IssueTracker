@@ -1,6 +1,9 @@
 package com.yash.yits.dao;
 
-import com.yash.yits.model.IssueType;
+import java.util.List;
+
+import com.yash.yits.domain.IssueType;
+
 
 /**
  * 
@@ -13,5 +16,7 @@ public interface IssueTypeDao {
 	 * @param issueType
 	 */
 	public void saveIssueType(IssueType issueType);
+	
+	public List<IssueType> getAllIssueType();
 
 }
