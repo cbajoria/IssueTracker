@@ -36,7 +36,7 @@
 		<property name="basenames">
 			<list>
 				<value>/WEB-INF/i18n/user</value>
-				
+				<value>/WEB-INF/i18n/issue</value>
 			</list>
 		 </property>
 	</bean>     
@@ -48,8 +48,8 @@
     	<property name="maxUploadSize" value="50000000000"/>
 	</bean>
 
-
-
+	<!-- configure static folders -->
+	<mvc:resources location="/components/" mapping="/components/**"/>
 
 
 
