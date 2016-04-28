@@ -12,7 +12,7 @@ public class UserForm {
 
 	private String userJobTitle;
 
-	private String userManagerId;
+	private Long userManagerId;
 
 	private String userManagerName;
 
@@ -62,11 +62,11 @@ public class UserForm {
 		this.userJobTitle = userJobTitle;
 	}
 
-	public String getUserManagerId() {
+	public Long getUserManagerId() {
 		return userManagerId;
 	}
 
-	public void setUserManagerId(String userManagerId) {
+	public void setUserManagerId(Long userManagerId) {
 		this.userManagerId = userManagerId;
 	}
 

@@ -3,14 +3,6 @@ package com.yash.yits.domain;
 import java.io.Serializable;
 
 import javax.persistence.*;
-
-import com.yash.yits.form.IssueAssignedStatusForm;
-import com.yash.yits.form.IssuePriorityForm;
-import com.yash.yits.form.IssueStatusForm;
-import com.yash.yits.form.IssueTypeForm;
-import com.yash.yits.form.ProjectForm;
-import com.yash.yits.form.UserForm;
-
 import java.util.Date;
 import java.util.List;
 
@@ -58,9 +50,10 @@ public class Issue implements Serializable {
 	@Column(name="ISSUE_SUMMARY")
 	private String issueSummary;
 
-	/*//bi-directional many-to-one association to IssueAssignedStatus
-	@ManyToOne(cascade=CascadeType.ALL)*/
+	//bi-directional many-to-one association to IssueAssignedStatus
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="ISSUEASSIGNED_STATUS")
+	/*@Column(name="ISSUEASSIGNED_STATUS")*/
 	private IssueAssignedStatus issueAssignedStatus;
 
 	//bi-directional many-to-one association to User
@@ -68,24 +61,28 @@ public class Issue implements Serializable {
 	@JoinColumn(name="ISSUE_ASSIGNEEID")
 	private User user;
 
-	/*//bi-directional many-to-one association to Issuetype
-	@ManyToOne(cascade=CascadeType.ALL)*/
+	//bi-directional many-to-one association to Issuetype
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="ISSUE_TYPE_ID")
+	/*@Column(name="ISSUE_TYPE_ID")*/
 	private IssueType issueType;
 
-	/*//bi-directional many-to-one association to Project
-	@ManyToOne(cascade=CascadeType.ALL)*/
+	//bi-directional many-to-one association to Project
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="ISSUE_PROJECT_ID")
+	/*@Column(name="ISSUE_PROJECT_ID")*/
 	private Project project;
 
-	/*//bi-directional many-to-one association to Issuepriority
-	@ManyToOne(cascade=CascadeType.ALL)*/
+	//bi-directional many-to-one association to Issuepriority
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="ISSUE_PRIORITY_ID")
+	/*@Column(name="ISSUE_PRIORITY_ID")*/
 	private IssuePriority issuePriority;
 
-	/*//bi-directional many-to-one association to Issuestatus
-	@ManyToOne(cascade=CascadeType.ALL)*/
+	//bi-directional many-to-one association to Issuestatus
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="ISSUE_STATUS_ID")
+	/*@Column(name="ISSUE_STATUS_ID")*/
 	private IssueStatus issueStatus;
 
 	//bi-directional many-to-many association to Attachment

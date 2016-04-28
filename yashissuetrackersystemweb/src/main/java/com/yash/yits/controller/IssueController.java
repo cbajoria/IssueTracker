@@ -47,7 +47,22 @@ public class IssueController {
 	@ResponseBody
 	public String submitCreateIssueForm(@RequestBody IssueForm issueForm){
 
-		issueService.createIssue(issueForm);
+		System.out.println(issueForm.getIssueAffectedVersion());
+		System.out.println(issueForm.getIssueComponent());
+		System.out.println(issueForm.getIssueDescription());
+		System.out.println(issueForm.getIssueDetailId());
+		
+		System.out.println(issueForm.getIssueEnvironment());
+		System.out.println(issueForm.getIssueSummary());
+		System.out.println(issueForm.getIssueAssignedStatus().getIssueAssignmentStatusId());
+		System.out.println(issueForm.getIssueDueDate());
+		System.out.println(issueForm.getIssuePriority().getIssuePriorityId());
+		System.out.println(issueForm.getIssueStatus().getIssueStatusId());
+		System.out.println(issueForm.getIssueType().getIssueId());
+		System.out.println(issueForm.getProject().getProjectId());
+		
+		
+		/*issueService.createIssue(issueForm);*/
 		return "success";
 	}
 	

@@ -9,29 +9,35 @@
           	<class-a>com.yash.yits.form.IssueForm</class-a>
           	<class-b>com.yash.yits.domain.Issue</class-b>
           </mapping>
+          
+          <mapping>
+          	<class-a>com.yash.yits.form.UserForm</class-a>
+          	<class-b>com.yash.yits.domain.User</class-b>
+          </mapping>
+          
           <mapping>
           	<class-a>com.yash.yits.form.IssueAssignedStatusForm</class-a>
           	<class-b>com.yash.yits.domain.IssueAssignedStatus</class-b>
           </mapping>
+          
           <mapping>
           	<class-a>com.yash.yits.form.IssuePriorityForm</class-a>
           	<class-b>com.yash.yits.domain.IssuePriority</class-b>
           </mapping>
+          
           <mapping>
           	<class-a>com.yash.yits.form.IssueStatusForm</class-a>
           	<class-b>com.yash.yits.domain.IssueStatus</class-b>
           </mapping>
+          
           <mapping>
           	<class-a>com.yash.yits.form.IssueTypeForm</class-a>
           	<class-b>com.yash.yits.domain.IssueType</class-b>
           </mapping>
+          
           <mapping>
           	<class-a>com.yash.yits.form.ProjectForm</class-a>
           	<class-b>com.yash.yits.domain.Project</class-b>
-          </mapping>
-          <mapping>
-          	<class-a>com.yash.yits.form.UserForm</class-a>
-          	<class-b>com.yash.yits.domain.User</class-b>
           </mapping>
           
 </mappings>

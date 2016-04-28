@@ -96,14 +96,14 @@ public class IssueServiceImpl implements IssueService{
 	public int createIssue(IssueForm issueForm) {
 		
 		Issue issue = mapper.map(issueForm, Issue.class);
-		
+
 		//set Assigned status
 		if(issue.getUser().getUserId()==null)
 			issue.getIssueAssignedStatus().setIssueassignmentStatusId(1);
 		else
 			issue.getIssueAssignedStatus().setIssueassignmentStatusId(2);
 		
-		int issueId = issueDao.createIssue(issue); 
-		return issueId;
+		int issueId = issueDao.createIssue(issue);
+		return 1;
 	}
 }

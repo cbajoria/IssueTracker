@@ -24,40 +24,37 @@ public class IssueForm {
 
 	private String issueSummary;
 
-	private IssueAssignedStatusForm issueAssignedStatusForm;
+	private IssueAssignedStatusForm issueAssignedStatus;
 
-	private UserForm userForm;
+	private UserForm user;
 
-	private IssueTypeForm issueTypeForm;
+	private IssueTypeForm issueType;
 
-	private ProjectForm projectForm;
+	private ProjectForm project;
 
-	private IssuePriorityForm issuePriorityForm;
+	private IssuePriorityForm issuePriority;
 
-	private IssueStatusForm issueStatusForm;
+	private IssueStatusForm issueStatus;
 
 //	private List<AttachmentForm> attachments;
 
 	public IssueForm() {
 		
-		this.issueAssignedStatusForm = new IssueAssignedStatusForm();
-		this.userForm = new UserForm();
-		this.issueTypeForm = new IssueTypeForm();
-		this.projectForm = new ProjectForm();
-		this.issuePriorityForm = new IssuePriorityForm();
-		this.issueStatusForm = new IssueStatusForm();
+		this.issueAssignedStatus = new IssueAssignedStatusForm();
+		this.user = new UserForm();
+		this.issueType = new IssueTypeForm();
+		this.project = new ProjectForm();
+		this.issuePriority = new IssuePriorityForm();
+		this.issueStatus = new IssueStatusForm();
 	}
 
-	
 	public int getIssueDetailId() {
 		return issueDetailId;
 	}
 
-
 	public void setIssueDetailId(int issueDetailId) {
 		this.issueDetailId = issueDetailId;
 	}
-
 
 	public String getIssueAffectedVersion() {
 		return issueAffectedVersion;
@@ -131,52 +128,51 @@ public class IssueForm {
 		this.issueSummary = issueSummary;
 	}
 
-	public IssueAssignedStatusForm getIssueAssignedStatusForm() {
-		return issueAssignedStatusForm;
+	public IssueAssignedStatusForm getIssueAssignedStatus() {
+		return issueAssignedStatus;
 	}
 
-	public void setIssueAssignedStatusForm(
-			IssueAssignedStatusForm issueAssignedStatusForm) {
-		this.issueAssignedStatusForm = issueAssignedStatusForm;
+	public void setIssueAssignedStatus(IssueAssignedStatusForm issueAssignedStatus) {
+		this.issueAssignedStatus = issueAssignedStatus;
 	}
 
-	public UserForm getUserForm() {
-		return userForm;
+	public UserForm getUser() {
+		return user;
 	}
 
-	public void setUserForm(UserForm userForm) {
-		this.userForm = userForm;
+	public void setUser(UserForm user) {
+		this.user = user;
 	}
 
-	public IssueTypeForm getIssueTypeForm() {
-		return issueTypeForm;
+	public IssueTypeForm getIssueType() {
+		return issueType;
 	}
 
-	public void setIssueTypeForm(IssueTypeForm issueTypeForm) {
-		this.issueTypeForm = issueTypeForm;
+	public void setIssueType(IssueTypeForm issueType) {
+		this.issueType = issueType;
 	}
 
-	public ProjectForm getProjectForm() {
-		return projectForm;
+	public ProjectForm getProject() {
+		return project;
 	}
 
-	public void setProjectForm(ProjectForm projectForm) {
-		this.projectForm = projectForm;
+	public void setProject(ProjectForm project) {
+		this.project = project;
 	}
 
-	public IssuePriorityForm getIssuePriorityForm() {
-		return issuePriorityForm;
+	public IssuePriorityForm getIssuePriority() {
+		return issuePriority;
 	}
 
-	public void setIssuePriorityForm(IssuePriorityForm issuePriorityForm) {
-		this.issuePriorityForm = issuePriorityForm;
+	public void setIssuePriority(IssuePriorityForm issuePriority) {
+		this.issuePriority = issuePriority;
 	}
 
-	public IssueStatusForm getIssueStatusForm() {
-		return issueStatusForm;
+	public IssueStatusForm getIssueStatus() {
+		return issueStatus;
 	}
 
-	public void setIssueStatusForm(IssueStatusForm issueStatusForm) {
-		this.issueStatusForm = issueStatusForm;
+	public void setIssueStatus(IssueStatusForm issueStatus) {
+		this.issueStatus = issueStatus;
 	}
 }

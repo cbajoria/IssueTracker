@@ -81,11 +81,13 @@ public class IssueDaoImpl implements IssueDao{
 
 	public int createIssue(Issue issue) {
 		
-		Session session = sessionFactory.openSession();
+		System.out.println(issue.getUser().getUserId());
+		
+		/*Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 		session.saveOrUpdate(issue);
 		transaction.commit();
-		session.close();
+		session.close();*/
 		return 1;		// alter
 	}
 }

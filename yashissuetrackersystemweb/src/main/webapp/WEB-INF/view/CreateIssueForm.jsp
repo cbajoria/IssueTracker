@@ -35,19 +35,19 @@
 	<div class="login-form">
 		<div class="form-group">
 			<spring:message code="issue.project"/>
-			<select ng-model="ic.createIssue.projectForm.projectId" class="form-control">
+			<select ng-model="ic.createIssue.project.projectId" class="form-control">
 				<option ng-repeat="project in projects" value="{{project.projectId}}" >{{project.projectName}}</option>
 			</select>
 		</div>
 		<div class="form-group">
 			<spring:message code="issue.type"/>
-			<select ng-model="ic.createIssue.issueTypeForm.issueId" class="form-control">
+			<select ng-model="ic.createIssue.issueType.issueId" class="form-control">
 				<option ng-repeat="issueType in issueTypeList" value="{{issueType.issueId}}" >{{issueType.issueType}}</option>
 			</select>
 		</div>
 		<div class="form-group">
 			<spring:message code="issue.priority"/>
-			<select ng-model="ic.createIssue.issuePriorityForm.issuePriorityId" class="form-control" >
+			<select ng-model="ic.createIssue.issuePriority.issuePriorityId" class="form-control" >
 				<option ng-repeat="priority in priorities" value="{{priority.issuePriorityId}}">{{priority.issuePriorityType}}</option>
 			</select>
 		</div>
@@ -73,7 +73,7 @@
 		</div>
 		<div class="form-group">
 			<spring:message code="issue.assignee"/>
-			<select ng-model="ic.createIssue.userForm.userId" class="form-control" >
+			<select ng-model="ic.createIssue.user.userId" class="form-control" >
 				<option value="{{assignee.userId}}" ng-repeat="assignee in assigneeList" value="{{assignee.userId}}">{{assignee.userName}}</option>
 			</select>
 		</div>
@@ -85,11 +85,11 @@
 			<spring:message code="issue.Description"/>
 			<textarea rows="4" cols="50" ng-model="ic.createIssue.issueDescription" class="form-control" ></textarea>
 		</div>
-		<div class="form-group">
+		<%-- <div class="form-group">
 			<spring:message code="issue.originalEstimate"/>
 			<input type="text" ng-model="ic.createIssue.issueOriginalEstimate" class="form-control" />
 		</div>
-	<%-- <div class="form-group">
+		<div class="form-group">
 			<spring:message code="issue.remainingEstimate"/>
 			<input type="text" ng-model="ic.createIssue.issueRemainingEstimate" class="form-control" />
 		</div>
