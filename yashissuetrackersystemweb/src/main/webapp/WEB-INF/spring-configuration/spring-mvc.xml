@@ -22,9 +22,11 @@
 
 	<!-- this is for scanning all the packages for Bean creation -->
 	<context:component-scan base-package="com.yash.yits.controller" />
-	<mvc:annotation-driven />
-	
-
+	<mvc:annotation-driven></mvc:annotation-driven>
+	<mvc:resources location="/components/angular/controller/" mapping="/components/angular/controller/**"></mvc:resources>
+	<mvc:resources location="/components/angular/routing/" mapping="/components/angular/routing/**"></mvc:resources>
+	<mvc:resources location="/components/angular/service/" mapping="/components/angular/service/**"></mvc:resources>
+	<mvc:resources location="/components/angular/" mapping="/components/angular/**"></mvc:resources>
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:order="0">
 		<property name="prefix" value="/WEB-INF/jsp/" />

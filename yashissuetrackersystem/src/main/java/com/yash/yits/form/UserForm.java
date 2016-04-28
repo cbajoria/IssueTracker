@@ -1,5 +1,109 @@
 package com.yash.yits.form;
 
-public class UserForm {
 
+public class UserForm {
+	
+	private String userId;
+
+	private String userAliasName;
+
+	private String userDepartment;
+
+	private String userEmail;
+
+	private String userJobTitle;
+
+	private String userManagerId;
+
+	private String userManagerName;
+
+	private String userMobile;
+
+	private String userName;
+
+	private String userOffice;
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getUserAliasName() {
+		return userAliasName;
+	}
+
+	public void setUserAliasName(String userAliasName) {
+		this.userAliasName = userAliasName;
+	}
+
+	public String getUserDepartment() {
+		return userDepartment;
+	}
+
+	public void setUserDepartment(String userDepartment) {
+		this.userDepartment = userDepartment;
+	}
+
+	public String getUserEmail() {
+		return userEmail;
+	}
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
+
+	public String getUserJobTitle() {
+		return userJobTitle;
+	}
+
+	public void setUserJobTitle(String userJobTitle) {
+		this.userJobTitle = userJobTitle;
+	}
+
+	public String getUserManagerId() {
+		return userManagerId;
+	}
+
+	public void setUserManagerId(String userManagerId) {
+		this.userManagerId = userManagerId;
+	}
+
+	public String getUserManagerName() {
+		return userManagerName;
+	}
+
+	public void setUserManagerName(String userManagerName) {
+		this.userManagerName = userManagerName;
+	}
+
+	public String getUserMobile() {
+		return userMobile;
+	}
+
+	public void setUserMobile(String userMobile) {
+		this.userMobile = userMobile;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getUserOffice() {
+		return userOffice;
+	}
+
+	public void setUserOffice(String userOffice) {
+		this.userOffice = userOffice;
+	}
+	
+	
+
+	
 }
