@@ -6,6 +6,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -16,6 +17,7 @@ import com.yash.yits.domain.IssuePriority;
 import com.yash.yits.domain.IssueStatus;
 import com.yash.yits.domain.IssueType;
 import com.yash.yits.domain.Project;
+import com.yash.yits.domain.User;
 
 @Repository
 public class IssueDaoImpl implements IssueDao{
@@ -67,14 +69,23 @@ public class IssueDaoImpl implements IssueDao{
 		session.close();
 		return issueStatus;
 	}
+	
+	public List<User> getAssigneeList() {
+
+		Session session = sessionFactory.openSession();
+		Criteria criteria = session.createCriteria(User.class);
+		List<User> assigneeList = criteria.list();
+		session.close();
+		return assigneeList;
+	}
 
 	public int createIssue(Issue issue) {
 		
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		int issueId = (Integer) session.save(issue);
+		session.saveOrUpdate(issue);
 		transaction.commit();
 		session.close();
-		return issueId;
+		return 1;		// alter
 	}
 }

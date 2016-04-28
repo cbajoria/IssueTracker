@@ -21,15 +21,12 @@ var issueModule = angular.module('issueTrackerApp',['ngRoute']);
             					 $scope.priorities=value;
             					 break;
             			 	case 1:
-            			 		$scope.assignedStatusList=value;
+            			 		$scope.assigneeList=value;
             			 		break;
             			 	case 2:
-            			 		$scope.issueStatusList=value;
-            			 		break;
-            			 	case 3:
             			 		$scope.issueTypeList=value;
             			 		break;
-            			 	case 4:
+            			 	case 3:
             			 		$scope.projects=value;
             			 		break;
             			 }
@@ -43,6 +40,7 @@ var issueModule = angular.module('issueTrackerApp',['ngRoute']);
 		
 		this.createIssue={};
 		this.add=function(){
+			
 			// call service to persist in db
 			issueService.submitCreateIssue(this.createIssue);
 	        /*.then(

@@ -8,6 +8,7 @@ import com.yash.yits.domain.IssuePriority;
 import com.yash.yits.domain.IssueStatus;
 import com.yash.yits.domain.IssueType;
 import com.yash.yits.domain.Project;
+import com.yash.yits.domain.User;
 
 public interface IssueDao {
 
@@ -20,6 +21,8 @@ public interface IssueDao {
 	public List<IssueAssignedStatus> getAssignedStatus();
 	
 	public List<IssueStatus> getIssueStatus();
+	
+	public List<User> getAssigneeList();
 	
 	public int createIssue(Issue issue);
 	

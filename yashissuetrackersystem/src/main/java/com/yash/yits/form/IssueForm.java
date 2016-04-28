@@ -4,6 +4,8 @@ import java.util.Date;
 
 public class IssueForm {
 	
+	private int issueDetailId;
+	
 	private String issueAffectedVersion;
 
 	private String issueComponent;
@@ -45,7 +47,18 @@ public class IssueForm {
 		this.issuePriorityForm = new IssuePriorityForm();
 		this.issueStatusForm = new IssueStatusForm();
 	}
+
 	
+	public int getIssueDetailId() {
+		return issueDetailId;
+	}
+
+
+	public void setIssueDetailId(int issueDetailId) {
+		this.issueDetailId = issueDetailId;
+	}
+
+
 	public String getIssueAffectedVersion() {
 		return issueAffectedVersion;
 	}

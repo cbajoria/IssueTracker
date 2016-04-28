@@ -12,6 +12,7 @@ import java.util.List;
 @Entity
 @NamedQuery(name="IssuePriority.findAll", query="SELECT i FROM IssuePriority i")
 public class IssuePriority implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -30,7 +31,7 @@ public class IssuePriority implements Serializable {
 	}
 
 	public int getIssuePriorityId() {
-		return this.issuePriorityId;
+		return issuePriorityId;
 	}
 
 	public void setIssuePriorityId(int issuePriorityId) {

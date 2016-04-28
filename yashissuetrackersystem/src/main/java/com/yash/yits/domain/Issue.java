@@ -1,7 +1,16 @@
 package com.yash.yits.domain;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
+import com.yash.yits.form.IssueAssignedStatusForm;
+import com.yash.yits.form.IssuePriorityForm;
+import com.yash.yits.form.IssueStatusForm;
+import com.yash.yits.form.IssueTypeForm;
+import com.yash.yits.form.ProjectForm;
+import com.yash.yits.form.UserForm;
+
 import java.util.Date;
 import java.util.List;
 
@@ -16,7 +25,7 @@ public class Issue implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue
 	@Column(name="ISSUEDETAIL_ID")
 	private int issueDetailId;
 
@@ -49,33 +58,33 @@ public class Issue implements Serializable {
 	@Column(name="ISSUE_SUMMARY")
 	private String issueSummary;
 
-	//bi-directional many-to-one association to IssueAssignedStatus
-	@ManyToOne
+	/*//bi-directional many-to-one association to IssueAssignedStatus
+	@ManyToOne(cascade=CascadeType.ALL)*/
 	@JoinColumn(name="ISSUEASSIGNED_STATUS")
 	private IssueAssignedStatus issueAssignedStatus;
 
 	//bi-directional many-to-one association to User
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="ISSUE_ASSIGNEEID")
 	private User user;
 
-	//bi-directional many-to-one association to Issuetype
-	@ManyToOne
+	/*//bi-directional many-to-one association to Issuetype
+	@ManyToOne(cascade=CascadeType.ALL)*/
 	@JoinColumn(name="ISSUE_TYPE_ID")
 	private IssueType issueType;
 
-	//bi-directional many-to-one association to Project
-	@ManyToOne
+	/*//bi-directional many-to-one association to Project
+	@ManyToOne(cascade=CascadeType.ALL)*/
 	@JoinColumn(name="ISSUE_PROJECT_ID")
 	private Project project;
 
-	//bi-directional many-to-one association to Issuepriority
-	@ManyToOne
+	/*//bi-directional many-to-one association to Issuepriority
+	@ManyToOne(cascade=CascadeType.ALL)*/
 	@JoinColumn(name="ISSUE_PRIORITY_ID")
 	private IssuePriority issuePriority;
 
-	//bi-directional many-to-one association to Issuestatus
-	@ManyToOne
+	/*//bi-directional many-to-one association to Issuestatus
+	@ManyToOne(cascade=CascadeType.ALL)*/
 	@JoinColumn(name="ISSUE_STATUS_ID")
 	private IssueStatus issueStatus;
 
@@ -88,6 +97,13 @@ public class Issue implements Serializable {
 	private List<IssueFeed> issueFeeds;
 
 	public Issue() {
+		
+		this.issueAssignedStatus = new IssueAssignedStatus();
+		this.user = new User();
+		this.issueType = new IssueType();
+		this.project = new Project();
+		this.issuePriority = new IssuePriority();
+		this.issueStatus = new IssueStatus();
 	}
 
 	public int getIssueDetailId() {
@@ -170,7 +186,7 @@ public class Issue implements Serializable {
 		this.issueSummary = issueSummary;
 	}
 
-	public IssueAssignedStatus getIssueassignedstatus() {
+	public IssueAssignedStatus getIssueAssignedStatus() {
 		return this.issueAssignedStatus;
 	}
 

@@ -1,10 +1,8 @@
 package com.yash.yits.form;
 
-import java.util.List;
-
 public class UserForm {
 
-	private String userId;
+	private Long userId;
 	
 	private String userAliasName;
 
@@ -24,23 +22,16 @@ public class UserForm {
 
 	private String userOffice;
 
-
-	public UserForm() {
-	}
-	
-	
-	public String getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-
-	public void setUserId(String userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 
-
 	public String getUserAliasName() {
-		return this.userAliasName;
+		return userAliasName;
 	}
 
 	public void setUserAliasName(String userAliasName) {
@@ -48,7 +39,7 @@ public class UserForm {
 	}
 
 	public String getUserDepartment() {
-		return this.userDepartment;
+		return userDepartment;
 	}
 
 	public void setUserDepartment(String userDepartment) {
@@ -56,7 +47,7 @@ public class UserForm {
 	}
 
 	public String getUserEmail() {
-		return this.userEmail;
+		return userEmail;
 	}
 
 	public void setUserEmail(String userEmail) {
@@ -64,7 +55,7 @@ public class UserForm {
 	}
 
 	public String getUserJobTitle() {
-		return this.userJobTitle;
+		return userJobTitle;
 	}
 
 	public void setUserJobTitle(String userJobTitle) {
@@ -72,7 +63,7 @@ public class UserForm {
 	}
 
 	public String getUserManagerId() {
-		return this.userManagerId;
+		return userManagerId;
 	}
 
 	public void setUserManagerId(String userManagerId) {
@@ -80,7 +71,7 @@ public class UserForm {
 	}
 
 	public String getUserManagerName() {
-		return this.userManagerName;
+		return userManagerName;
 	}
 
 	public void setUserManagerName(String userManagerName) {
@@ -88,7 +79,7 @@ public class UserForm {
 	}
 
 	public String getUserMobile() {
-		return this.userMobile;
+		return userMobile;
 	}
 
 	public void setUserMobile(String userMobile) {
@@ -96,7 +87,7 @@ public class UserForm {
 	}
 
 	public String getUserName() {
-		return this.userName;
+		return userName;
 	}
 
 	public void setUserName(String userName) {
@@ -104,7 +95,7 @@ public class UserForm {
 	}
 
 	public String getUserOffice() {
-		return this.userOffice;
+		return userOffice;
 	}
 
 	public void setUserOffice(String userOffice) {

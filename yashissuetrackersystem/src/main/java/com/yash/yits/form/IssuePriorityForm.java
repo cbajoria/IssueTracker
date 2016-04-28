@@ -6,11 +6,8 @@ public class IssuePriorityForm{
 
 	private String issuePriorityType;
 
-	public IssuePriorityForm() {
-	}
-
 	public int getIssuePriorityId() {
-		return this.issuePriorityId;
+		return issuePriorityId;
 	}
 
 	public void setIssuePriorityId(int issuePriorityId) {
@@ -18,7 +15,7 @@ public class IssuePriorityForm{
 	}
 
 	public String getIssuePriorityType() {
-		return this.issuePriorityType;
+		return issuePriorityType;
 	}
 
 	public void setIssuePriorityType(String issuePriorityType) {

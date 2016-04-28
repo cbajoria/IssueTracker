@@ -19,6 +19,9 @@ public class Attachment implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ATTACHMENT_ID")
 	private int attachmentId;
+	
+	@Column(name="ATTACHMENT_NAME")
+	private String attachmentName;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="ATTACHMENT_DATE")
@@ -53,6 +56,14 @@ public class Attachment implements Serializable {
 
 	public void setAttachmentId(int attachmentId) {
 		this.attachmentId = attachmentId;
+	}
+	
+	public String getAttachmentName() {
+		return attachmentName;
+	}
+
+	public void setAttachmentName(String attachmentName) {
+		this.attachmentName = attachmentName;
 	}
 
 	public Date getAttachmentDate() {

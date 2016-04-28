@@ -17,7 +17,7 @@ public class Project implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="PROJECT_ID")
-	private String projectId;
+	private Long projectId;
 
 	@Column(name="PROJECT_DURATION")
 	private String projectDuration;
@@ -41,11 +41,11 @@ public class Project implements Serializable {
 	public Project() {
 	}
 
-	public String getProjectId() {
+	public Long getProjectId() {
 		return this.projectId;
 	}
 
-	public void setProjectId(String projectId) {
+	public void setProjectId(Long projectId) {
 		this.projectId = projectId;
 	}
 

@@ -35,7 +35,7 @@
 	<div class="login-form">
 		<div class="form-group">
 			<spring:message code="issue.project"/>
-			<select ng-model="ic.createIssue.issueProjectForm.projectId" class="form-control">
+			<select ng-model="ic.createIssue.projectForm.projectId" class="form-control">
 				<option ng-repeat="project in projects" value="{{project.projectId}}" >{{project.projectName}}</option>
 			</select>
 		</div>
@@ -55,14 +55,14 @@
 			<spring:message code="issue.summary"/>
 			<input type="text" ng-model="ic.createIssue.issueSummary" class="form-control" />
 		</div>
-		<div class="form-group">
+		<%-- <div class="form-group">
 			<spring:message code="issue.creationDate"/>
 			<input type="date" ng-model="ic.createIssue.issueCreationDate" class="form-control" disabled/>
 		</div>
 		<div class="form-group">
 			<spring:message code="issue.dueDate"/>
 			<input type="date" ng-model="ic.createIssue.issueDueDate" class="form-control" />
-		</div>
+		</div> --%>
 		<div class="form-group">
 			<spring:message code="issue.component"/>
 			<input type="text" ng-model="ic.createIssue.issueComponent" class="form-control" />
@@ -74,7 +74,7 @@
 		<div class="form-group">
 			<spring:message code="issue.assignee"/>
 			<select ng-model="ic.createIssue.userForm.userId" class="form-control" >
-				<option value="ic.createIssue.userForm.userId"></option>
+				<option value="{{assignee.userId}}" ng-repeat="assignee in assigneeList" value="{{assignee.userId}}">{{assignee.userName}}</option>
 			</select>
 		</div>
 		<div class="form-group">
@@ -89,11 +89,11 @@
 			<spring:message code="issue.originalEstimate"/>
 			<input type="text" ng-model="ic.createIssue.issueOriginalEstimate" class="form-control" />
 		</div>
-		<div class="form-group">
+	<%-- <div class="form-group">
 			<spring:message code="issue.remainingEstimate"/>
 			<input type="text" ng-model="ic.createIssue.issueRemainingEstimate" class="form-control" />
 		</div>
-	<%-- 	<div class="form-group">
+		<div class="form-group">
 			<spring:message code="issue.assignedStatus"/>
 			<select ng-model="ic.createIssue.issueAssignedStatusForm.issueAssignmentStatusId" class="form-control" >
 				<option ng-repeat="assignedStatus in assignedStatusList" value="assignedStatus.issueAssignmentStatusId">{{assignedStatus.issueAssignmentStatus}}</option>

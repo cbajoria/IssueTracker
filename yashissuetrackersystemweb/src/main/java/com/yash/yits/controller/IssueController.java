@@ -37,26 +37,18 @@ public class IssueController {
 	public List<Object> getPriority(){
 		List<Object> formList = new ArrayList<Object>();
 		formList.add(issueService.getPriorities());
-		formList.add(issueService.getAssignedStatus());	// not req
-		formList.add(issueService.getIssueStatus());	//not req
+		formList.add(issueService.getAssigneeList());
 		formList.add(issueService.getIssueType());
 		formList.add(issueService.getProjects());
 		return formList;
 	}
 	
-	/*@RequestMapping(value="/createIssue",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
-	@ResponseBody
-	public String submitCreateIssueForm(@RequestBody IssueForm issueForm){
-		
-		issueService.createIssue(issueForm);
-		return "success";
-	}*/
-	
 	@RequestMapping(value="/createIssue",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public String submitCreateIssueForm(@RequestBody Issue issueForm){
-		
+	public String submitCreateIssueForm(@RequestBody IssueForm issueForm){
+
 		issueService.createIssue(issueForm);
 		return "success";
 	}
+	
 }

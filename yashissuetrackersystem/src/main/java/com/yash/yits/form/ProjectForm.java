@@ -2,7 +2,7 @@ package com.yash.yits.form;
 
 public class ProjectForm{
 
-	private String projectId;
+	private Long projectId;
 
 	private String projectDuration;
 
@@ -11,11 +11,11 @@ public class ProjectForm{
 	public ProjectForm() {
 	}
 
-	public String getProjectId() {
+	public Long getProjectId() {
 		return this.projectId;
 	}
 
-	public void setProjectId(String projectId) {
+	public void setProjectId(Long projectId) {
 		this.projectId = projectId;
 	}
 
