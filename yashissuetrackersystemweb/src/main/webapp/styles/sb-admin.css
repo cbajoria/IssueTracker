@@ -10,10 +10,11 @@ body {
 
     margin-top: 100px;
     background-color: white;
-	
-	
 }
-
+.box{
+	background-color: white;
+	border-color: white;
+}
 @media(min-width:768px) {
     body {
         margin-top: 50px;

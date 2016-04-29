@@ -23,6 +23,9 @@ import com.yash.yits.form.IssueTypeForm;
 import com.yash.yits.form.ProjectForm;
 import com.yash.yits.form.UserForm;
 
+/**This is a IssueService. This object will communicate between controller and dao.
+ * This will be responsible for transferring
+ * data by mapping from form to domain object*/
 @Service
 public class IssueServiceImpl implements IssueService{
 
@@ -98,11 +101,9 @@ public class IssueServiceImpl implements IssueService{
 		Issue issue = mapper.map(issueForm, Issue.class);
 
 		//set Assigned status
-		if(issue.getUser().getUserId()==null)
-			issue.getIssueAssignedStatus().setIssueassignmentStatusId(1);
-		else
+		if(issue.getUser().getUserId()!=null){
 			issue.getIssueAssignedStatus().setIssueassignmentStatusId(2);
-		
+		}
 		int issueId = issueDao.createIssue(issue);
 		return 1;
 	}

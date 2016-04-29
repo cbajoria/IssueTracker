@@ -7,14 +7,6 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>YITS</title>
-	<!-- angular scripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-<script src='<spring:url value="/components/angular/routing/routing.js"></spring:url>'></script>
-
-<script src='<spring:url value="/components/angular/routing/issueRouting.js"></spring:url>'></script>
-<script src='<spring:url value="/components/angular/controller/issueController.js"></spring:url>'></script>
-<script src='<spring:url value="/components/angular/service/initializeIssueService.js"></spring:url>'></script>
 
 </head>
 <body>
