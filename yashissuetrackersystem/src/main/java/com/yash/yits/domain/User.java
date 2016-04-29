@@ -1,7 +1,11 @@
 package com.yash.yits.domain;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
+import org.hibernate.annotations.GeneratorType;
+
 import java.util.List;
 
 
@@ -16,7 +20,7 @@ public class User implements Serializable {
 
 	@Id
 	@Column(name="USER_ID")
-	private long userId;
+	private Long userId;
 
 	@Column(name="USER_ALIAS_NAME")
 	private String userAliasName;
@@ -31,7 +35,7 @@ public class User implements Serializable {
 	private String userJobTitle;
 
 	@Column(name="USER_MANAGER_ID")
-	private String userManagerId;
+	private Long userManagerId;
 
 	@Column(name="USER_MANAGER_NAME")
 	private String userManagerName;
@@ -76,12 +80,12 @@ public class User implements Serializable {
 
 	public User() {
 	}
-
-	public long getUserId() {
-		return this.userId;
+	
+	public Long getUserId() {
+		return userId;
 	}
 
-	public void setUserId(long userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 
@@ -117,11 +121,11 @@ public class User implements Serializable {
 		this.userJobTitle = userJobTitle;
 	}
 
-	public String getUserManagerId() {
+	public Long getUserManagerId() {
 		return this.userManagerId;
 	}
 
-	public void setUserManagerId(String userManagerId) {
+	public void setUserManagerId(Long userManagerId) {
 		this.userManagerId = userManagerId;
 	}
 

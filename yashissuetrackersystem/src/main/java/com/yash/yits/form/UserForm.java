@@ -1,10 +1,9 @@
 package com.yash.yits.form;
 
-
 public class UserForm {
-	
-	private String userId;
 
+	private Long userId;
+	
 	private String userAliasName;
 
 	private String userDepartment;
@@ -13,7 +12,7 @@ public class UserForm {
 
 	private String userJobTitle;
 
-	private String userManagerId;
+	private Long userManagerId;
 
 	private String userManagerName;
 
@@ -23,11 +22,11 @@ public class UserForm {
 
 	private String userOffice;
 
-	public String getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 
@@ -63,11 +62,11 @@ public class UserForm {
 		this.userJobTitle = userJobTitle;
 	}
 
-	public String getUserManagerId() {
+	public Long getUserManagerId() {
 		return userManagerId;
 	}
 
-	public void setUserManagerId(String userManagerId) {
+	public void setUserManagerId(Long userManagerId) {
 		this.userManagerId = userManagerId;
 	}
 
@@ -102,8 +101,4 @@ public class UserForm {
 	public void setUserOffice(String userOffice) {
 		this.userOffice = userOffice;
 	}
-	
-	
-
-	
 }

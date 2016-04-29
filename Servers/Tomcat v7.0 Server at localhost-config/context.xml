@@ -29,7 +29,8 @@
     <!--
     <Valve className="org.apache.catalina.valves.CometConnectionManagerValve" />
     -->
-	<Resource name="jdbc/issuetrackerDB"
+    
+    <Resource name="jdbc/issuetrackerDB"
             auth="Container"
             type="javax.sql.DataSource"
             username="prajvi"
@@ -39,4 +40,6 @@
             maxActive="100"
             maxIdle="30"
             maxWait="10000"/>
+    
+
 </Context>
