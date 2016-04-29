@@ -27,9 +27,14 @@ public class IssueController {
 	@Autowired
 	IssueService issueService;
 	
-	@RequestMapping(value="/createIssueView",method=RequestMethod.GET)
-	public String issueForm(){
-		return"CreateIssueForm";
+	@RequestMapping(value="/createUserIssueView",method=RequestMethod.GET)
+	public String userIssueForm(){
+		return"UserCreateIssueForm";
+	}
+	
+	@RequestMapping(value="/createManagerIssueView",method=RequestMethod.GET)
+	public String managerIssueForm(){
+		return"ManagerCreateIssueForm";
 	}
 	
 	@RequestMapping(value="/getPriority",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)

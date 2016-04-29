@@ -12,6 +12,16 @@
     <!-- Custom Fonts -->
     <link href='<spring:url value="/styles/font-awesome.min.css"></spring:url>' rel="stylesheet" type="text/css">
 
+	<!-- angular scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+	<%-- <script src='<spring:url value="/components/angular/routing/routing.js"></spring:url>'></script> --%>
+	
+	<script src='<spring:url value="/components/angular/routing/userRouting.js"></spring:url>'></script>
+	<script src='<spring:url value="/components/angular/controller/userController.js"></spring:url>'></script>
+	<script src='<spring:url value="/components/angular/service/userService.js"></spring:url>'></script>
+	
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -19,7 +29,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<div>
+<div  ng-app="issueTrackingSystem.userModule">
     <div id="wrapper">
 
         <!-- Navigation -->
@@ -43,7 +53,7 @@
         <div id="page-wrapper">
 		
             <!-- container-fluid -->
-            <div class="container-fluid">
+            <div class="container-fluid" style="margin-top: 0px;padding-top: 50px;height: 100%;" ng-view="">
 
                
 

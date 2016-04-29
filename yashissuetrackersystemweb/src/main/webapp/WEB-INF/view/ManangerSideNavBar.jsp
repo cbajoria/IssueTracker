@@ -21,8 +21,6 @@
                     </li>
                     <li>
                         <a href="#"><i class="glyphicon glyphicon-list-alt"></i> Show Users</a>
-                    </li>
-                   
-                    
+                    </li>               
                 </ul>
 </div>
