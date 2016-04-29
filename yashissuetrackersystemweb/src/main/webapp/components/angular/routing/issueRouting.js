@@ -1,4 +1,4 @@
-var issueModule = angular.module('issueTrackerApp',['ngRoute']);
+var issueModule = angular.module('issueTrackingSystem.myIssue',['ngRoute']);
 	issueModule.config(function($routeProvider){
 		$routeProvider
 			.when('/createIssue',{

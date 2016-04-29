@@ -9,16 +9,17 @@
 	<!-- angular scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script src='<spring:url value="/components/angular/routing/routing.js"></spring:url>'></script>
 <script src='<spring:url value="/components/angular/routing/issueRouting.js"></spring:url>'></script>
 <script src='<spring:url value="/components/angular/controller/issueController.js"></spring:url>'></script>
 <script src='<spring:url value="/components/angular/service/initializeIssueService.js"></spring:url>'></script>
 </head>
-<body ng-app="issueTrackerApp">
+<body ng-app="issueTrackingSystem">
 
-	<h3>welcome page</h3>
-	
-	<a href="#/managerDashboard">Manager Dashboard</a>
-	<a href="#/userDashboard">User Dashboard</a>
+	<center>
+		<a href="#/managerDashboard">Manager Dashboard</a>
+		<a href="#/userDashboard">User Dashboard</a>
+	</center>
 	
 	<div ng-view=""></div>
 	

@@ -1,4 +1,4 @@
-angular.module('issueTrackerApp').controller('issueController',['$scope','$http','issueService',function($scope,$http,issueService){
+angular.module('issueTrackingSystem.myIssue').controller('issueController',['$scope','$http','issueService',function($scope,$http,issueService){
 	
 		/*issueService returns list to populate drop-down*/
 		issueService.initializeSelect()

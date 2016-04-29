@@ -1,4 +1,4 @@
-angular.module('issueTrackerApp').factory('issueService',['$http',function($http){
+angular.module('issueTrackingSystem.myIssue').factory('issueService',['$http',function($http){
 	
 	  return {
 		  
