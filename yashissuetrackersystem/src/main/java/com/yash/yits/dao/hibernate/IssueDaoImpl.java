@@ -19,6 +19,8 @@ import com.yash.yits.domain.IssueType;
 import com.yash.yits.domain.Project;
 import com.yash.yits.domain.User;
 
+/**This is a IssueDao. This object will communicate with db.
+ * This will be responsible for issue related operations.*/
 @Repository
 public class IssueDaoImpl implements IssueDao{
 
@@ -83,11 +85,11 @@ public class IssueDaoImpl implements IssueDao{
 		
 		System.out.println(issue.getUser().getUserId());
 		
-		/*Session session = sessionFactory.openSession();
+		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 		session.saveOrUpdate(issue);
 		transaction.commit();
-		session.close();*/
+		session.close();
 		return 1;		// alter
 	}
 }
