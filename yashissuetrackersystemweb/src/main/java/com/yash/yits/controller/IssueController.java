@@ -48,6 +48,12 @@ public class IssueController {
 		return formList;
 	}
 	
+	@RequestMapping(value="/showDetails",method=RequestMethod.GET)
+	public String showDetais(){
+		System.out.println("Hello");
+		return"SearchIssue";
+	}
+	
 	@RequestMapping(value="/createIssue",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public String submitCreateIssueForm(@RequestBody IssueForm issueForm){

@@ -5,4 +5,9 @@ managerModule.config(function($routeProvider){
 				templateUrl:'createManagerIssueView',
 				controller:'managerController as mc'
 			})
+			
+			.when('/showDetails',{
+				templateUrl:'showDetails',
+				controller:'IssueSearchController as isc'
+			})
 	});
