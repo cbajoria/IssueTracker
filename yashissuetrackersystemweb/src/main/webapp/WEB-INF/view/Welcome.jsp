@@ -10,9 +10,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
 <script src='<spring:url value="/components/angular/routing/routing.js"></spring:url>'></script>
+
 <script src='<spring:url value="/components/angular/routing/issueRouting.js"></spring:url>'></script>
 <script src='<spring:url value="/components/angular/controller/issueController.js"></spring:url>'></script>
 <script src='<spring:url value="/components/angular/service/initializeIssueService.js"></spring:url>'></script>
+
+<script src='<spring:url value="/components/angular/controller/UserController.js"></spring:url>'></script>
+<script src='<spring:url value="/components/angular/service/UserService.js"></spring:url>'></script>
+<script src='<spring:url value="/components/angular/routing/loginRouting.js"></spring:url>'></script>
 </head>
 <body ng-app="issueTrackingSystem">
 

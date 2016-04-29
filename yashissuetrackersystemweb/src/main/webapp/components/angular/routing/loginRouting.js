@@ -1,4 +1,4 @@
-var myApp=angular.module('issueTrackerSystem.myLogin',['ngRoute','issueController']);
+var myApp=angular.module('issueTrackerSystem.myLogin',['ngRoute']);
  myApp.config(function($routeProvider){     
 						 
 		 $routeProvider
@@ -7,7 +7,7 @@ var myApp=angular.module('issueTrackerSystem.myLogin',['ngRoute','issueControlle
                     controller:'UserLoginController',
 			          templateUrl:'./Login/loginForm'
                   })
-                 .when('/managerDashboard',
+                .when('/managerDashboard',
                  {
                	   resolve :
                		   {
@@ -21,7 +21,7 @@ var myApp=angular.module('issueTrackerSystem.myLogin',['ngRoute','issueControlle
                		    		 }
                		     }
                		   },
-                      controller:'IssueController as ic',
+                      controller:'issueController as ic',
 			           templateUrl:'managerWelcome'
                  })
                    .when('/userDashboard',
@@ -37,18 +37,8 @@ var myApp=angular.module('issueTrackerSystem.myLogin',['ngRoute','issueControlle
                		    		 }
                		     }
                		   },
-                      controller:'IssueController as ic',
+                      controller:'issueController as ic',
 			           templateUrl:'userWelcome'
-                 })
-                 .when('/userDashboard',{
-               	  
-					templateUrl:'userWelcome',
-					controller:'IssueController as ic'
-                 })
-                 .when('/managerDashboard',{
-               	  
-					templateUrl:'managerWelcome',
-					controller:'IssueController as ic'
                  })
                  .otherwise({     
                	  

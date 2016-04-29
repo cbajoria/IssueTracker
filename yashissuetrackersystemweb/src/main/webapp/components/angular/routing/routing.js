@@ -1,1 +1,1 @@
-angular.module('issueTrackingSystem',['issueTrackingSystem.myIssue']);
+angular.module('issueTrackingSystem',['issueTrackingSystem.myIssue','issueTrackerSystem.myLogin']);

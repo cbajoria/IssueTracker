@@ -1,22 +1,9 @@
-<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-	<%@ taglib uri="http://www.springframework.org/tags" prefix="c" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title> --%>
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<%-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-	<script src='<c:url value="components/angular/controller/UserController.js"></c:url>'></script>
-	<script src='<c:url value="components/angular/service/UserService.js"></c:url>'></script>
-	<script src='<c:url value="components/angular/routing/Routing.js"></c:url>'></script>
-	<script src='<c:url value="components/angular/angular-route.min.js"></c:url>'></script> --%>
 <style>
 .wrapper {
 	margin-top: 105px;
@@ -95,8 +82,8 @@ input[type="password"] {
 	padding-left: 539px;
 }
 </style>
-</head>
-<body>
+
+<div>
 	<div class="header header-color">
 		<h2 class="h2-tag">YITS</h2>
 	</div>
@@ -114,11 +101,7 @@ input[type="password"] {
 					<label><input type="checkbox"> Remember me</label>
 				</div>
 				<button type="submit" class="btn btn-success" ng-click="submit()">Submit</button>
-
 			</form>
 		</div>
-		<div class="footer">
-			<h5 class="h4-color">YASH Technologies. All Rights Reserved</h5>
-		</div>
-</body>
-<!-- </html> -->
+	</div>
+</div>

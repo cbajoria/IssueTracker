@@ -1,4 +1,4 @@
-angular.module('myApp.UserController', []).controller('UserController',['$scope','$location','UserService',function($scope,$location,UserService){
+angular.module('issueTrackerSystem.myLogin').controller('UserLoginController',['$scope','$location','UserLoginService',function($scope,$location,UserLoginService){
 	
 		$scope.user={'username':"",'password':""}
 		var users= new Object();
@@ -14,7 +14,7 @@ angular.module('myApp.UserController', []).controller('UserController',['$scope'
 		$scope.validateUser=function(user){
 			
 			alert("inside validate user");
-			 UserService.validateUser(user)
+			 UserLoginService.validateUser(user)
 				 .then(
 						 function(d) 
 						 {
@@ -22,11 +22,11 @@ angular.module('myApp.UserController', []).controller('UserController',['$scope'
 							 alert("Inside validate"+ users);
 							 if(users.userJobTitle == "Trainee Programmer")
 							 {
-								 $location.path('/User');
+								 $location.path('/userDashboard');
 							 }
 							 else
 							 {
-								 $location.path('/Manager');
+								 $location.path('/managerDashboard');
 							 }
 						 },
 						 function(errResponse)

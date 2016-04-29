@@ -1,6 +1,5 @@
-angular.module('myApp.UserService', []).factory('UserService',['$http','$q',function($http,$q){
+angular.module('issueTrackerSystem.myLogin').factory('UserLoginService',['$http','$q',function($http,$q){
   				return{
-  					
   						validateUser:function(user){
   								alert("inside service validate user");
   								return $http.post('http://localhost:8080/yashissuetrackersystemweb/Login/validateUser',user)
@@ -14,12 +13,5 @@ angular.module('myApp.UserService', []).factory('UserService',['$http','$q',func
                                      	 }
                              		);
   						},
-  						
-  						
-  						
   					}
-   					 
-  				
   			}]);
-  
-  

@@ -173,21 +173,21 @@ public class LoginServiceImpl implements LoginService {
         		 domainUser.setUserMobile((String)userMobile);
         		 domainUser.setUserJobTitle((String)userTitle);
         		 domainUser.setUserDepartment((String)userDepartment);
-        		 domainUser.setUserManagerId((String)managerId);
+        		 domainUser.setUserManagerId(Long.parseLong((String)managerId));
              	
         		 /**
         		  * setting the value in user form to return to controller 
         		  */
         		 userForm.setUserName((String)username);
         		 userForm.setUserManagerName(manager);
-        		 userForm.setUserId((String)userId);
+        		 userForm.setUserId(Long.parseLong((String)userId));
         		 userForm.setUserAliasName((String)userAlias);
         		 userForm.setUserEmail((String)userEmail);
         		 userForm.setUserOffice((String)userOffice);
         		 userForm.setUserMobile((String)userMobile);
         		 userForm.setUserJobTitle((String)userTitle);
         		 userForm.setUserDepartment((String)userDepartment);
-        		 userForm.setUserManagerId((String)managerId);
+        		 userForm.setUserManagerId(Long.parseLong((String)managerId));
              	 /**
              	  * check for user in database ,if not persist ,insert into database
              	  */
