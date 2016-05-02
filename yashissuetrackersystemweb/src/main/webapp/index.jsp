@@ -1,1 +1,7 @@
-<jsp:forward page="./welcome"/>
+<html>
+<body>
+
+<jsp:forward page="./welcomeView"></jsp:forward>
+
+</body>
+</html>

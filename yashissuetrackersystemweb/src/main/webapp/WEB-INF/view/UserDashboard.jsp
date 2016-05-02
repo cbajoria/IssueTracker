@@ -17,9 +17,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
 	<%-- <script src='<spring:url value="/components/angular/routing/routing.js"></spring:url>'></script> --%>
 	
-	<script src='<spring:url value="/components/angular/routing/managerRouting.js"></spring:url>'></script>
-	<script src='<spring:url value="/components/angular/controller/managerController.js"></spring:url>'></script>
-	<script src='<spring:url value="/components/angular/service/managerService.js"></spring:url>'></script>
+	<script src='<spring:url value="/components/angular/routing/userRouting.js"></spring:url>'></script>
+	<script src='<spring:url value="/components/angular/controller/userController.js"></spring:url>'></script>
+	<script src='<spring:url value="/components/angular/service/userService.js"></spring:url>'></script>
 	
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,7 +29,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<div ng-app="issueTrackingSystem.managerModule">
+<div  ng-app="issueTrackingSystem.userModule">
     <div id="wrapper">
 
         <!-- Navigation -->
@@ -44,7 +44,7 @@
        
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             
-             <jsp:include page="ManangerSideNavBar.jsp"></jsp:include>
+             <jsp:include page="UserSideNavBar.jsp"></jsp:include>
 
             <!-- /.navbar-collapse -->
         </nav>
@@ -54,6 +54,8 @@
 		
             <!-- container-fluid -->
             <div class="container-fluid" style="margin-top: 0px;padding-top: 50px;height: 100%;" ng-view="">
+
+               
 
             </div>
             <!-- /.container-fluid -->

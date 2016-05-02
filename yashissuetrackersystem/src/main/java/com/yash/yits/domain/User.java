@@ -19,7 +19,6 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="USER_ID")
 	private Long userId;
 
@@ -81,9 +80,9 @@ public class User implements Serializable {
 
 	public User() {
 	}
-
+	
 	public Long getUserId() {
-		return this.userId;
+		return userId;
 	}
 
 	public void setUserId(Long userId) {
