@@ -9,6 +9,7 @@ import com.yash.yits.domain.IssueStatus;
 import com.yash.yits.domain.IssueType;
 import com.yash.yits.domain.Project;
 import com.yash.yits.domain.User;
+import com.yash.yits.form.IssueForm;
 
 public interface IssueDao {
 
@@ -25,5 +26,9 @@ public interface IssueDao {
 	public List<User> getAssigneeList();
 	
 	public int createIssue(Issue issue);
+
+	public List<Issue> getDefaultIssues(String date1, String date2);
+
+	public List<Issue> search(String searchText);
 	
 }

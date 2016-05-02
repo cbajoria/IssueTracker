@@ -27,4 +27,10 @@ public interface IssueService {
 	public List<UserForm> getAssigneeList();
 	
 	public int createIssue(IssueForm issueForm);
+
+	public List<IssueForm> getDefaultIssues();
+
+	public List<IssueForm> search(String searchText);
+	
+	
 }

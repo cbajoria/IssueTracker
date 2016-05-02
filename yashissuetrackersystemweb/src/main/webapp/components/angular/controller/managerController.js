@@ -44,53 +44,36 @@ angular.module('issueTrackingSystem.managerModule').controller('managerControlle
 	             );*/
 			this.createIssue={};
 		};
+		
+		this.getIssues = function() {
+			
+			var searchText = this.searchText;
+			if (searchText == undefined) {
+				alert("Please Enter Text!")
+			}
+			else{
+				managerService.searchIssue(searchText)
+				.then(
+						function(data){
+							$scope.issues=data;
+						},
+						 function(errResponse)
+						 {
+							 console.error('Error while showing default search issues');
+						 }
+				)
+					
+				
+			}
+		};
+		
+		this.change=function(){
+			if(this.searchText == ""){}
+			else{
+				$('#datatable').remove();
+			}
+		};
+		
+		
 	}]);
 
-angular.module('issueTrackerSystem.managerModule', []).controller(
-		'IssueSearchController',
-		[ '$scope', '$location', 'IssueSearchService',
-				function($scope, $location, IssueSearchService) {
-
-					$scope.getIssues = function() {
-						var searchText = $scope.searchText;
-						if (searchText == undefined) {
-							alert("Please Enter Text!")
-						}
-						else{
-							IssueSearchService.searchIssue(searchText)
-							.then(
-									function(data){
-										$scope.issues=data;
-										
-									},
-									 function(errResponse)
-									 {
-										 console.error('Error while showing default search issues');
-									 }
-							)
-								
-							
-						}
-					}
-					
-					$scope.change=function(){
-						$('#datatable').remove();
-					}
-					
-					$scope.defaultSearch=function(){
-						
-						IssueSearchService.showIssues()
-						.then(
-								function(data){
-									$scope.issues=data;
-								},
-								 function(errResponse)
-								 {
-									 console.error('Error while searching issues');
-								 }
-								
-						)
-						
-					}
-				} ]);
-				
