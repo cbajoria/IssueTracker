@@ -2,6 +2,9 @@ package com.yash.yits.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -9,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.yash.yits.domain.Issue;
 import com.yash.yits.form.IssueForm;
+import com.yash.yits.form.UserForm;
 import com.yash.yits.service.IssueService;
 
 /**This is a IssueController. This object will communicate with front-end.
@@ -29,6 +35,15 @@ public class IssueController {
 	public String managerIssueForm(){
 		return"ManagerCreateIssueForm";
 	}
+	
+	@RequestMapping(value="/editIssueView",method=RequestMethod.GET)
+	public List<IssueForm> getAllIssues(HttpServletRequest httpServletRequest){
+		
+		 UserForm userForm=((UserForm)httpServletRequest.getAttribute("UserFormObject"));
+		 return issueService.fetchAllIssues(userForm.getUserId());
+		
+	}
+	
 	
 	@RequestMapping(value="/getPriority",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
@@ -59,5 +74,6 @@ public class IssueController {
 		issueService.createIssue(issueForm);
 		return "success";
 	}
+	
 	
 }

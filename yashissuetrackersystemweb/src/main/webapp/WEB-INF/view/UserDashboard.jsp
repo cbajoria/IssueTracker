@@ -1,5 +1,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
+
+
     <!-- Bootstrap Core CSS -->
     <link href='<spring:url value="/styles/bootstrap.min.css"></spring:url>' rel="stylesheet">
 
@@ -12,15 +14,18 @@
     <!-- Custom Fonts -->
     <link href='<spring:url value="/styles/font-awesome.min.css"></spring:url>' rel="stylesheet" type="text/css">
 
-	<!-- angular scripts -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+	
+    
+    <!-- angular scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-	<%-- <script src='<spring:url value="/components/angular/routing/routing.js"></spring:url>'></script> --%>
+	
 	
 	<script src='<spring:url value="/components/angular/routing/userRouting.js"></spring:url>'></script>
 	<script src='<spring:url value="/components/angular/controller/userController.js"></spring:url>'></script>
 	<script src='<spring:url value="/components/angular/service/userService.js"></spring:url>'></script>
 	
+	<%-- <script src='<spring:url value="/components/angular/routing/routing.js"></spring:url>'></script> --%>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -66,8 +71,7 @@
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
+	 <!-- jQuery -->
     <script src='<spring:url value="/scripts/jquery.js"></spring:url>'></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -77,6 +81,7 @@
     <script src='<spring:url value="/scripts/plugins/morris/raphael.min.js"></spring:url>'></script>
     <script src='<spring:url value="/scripts/plugins/morris/morris.min.js"></spring:url>'></script>
     <script src='<spring:url value="/scripts/plugins/morris/morris-data.js"></spring:url>'></script>
+   
 	<!-- footer -->
 	 
 	 <jsp:include page="Footer.jsp"></jsp:include>

@@ -11,7 +11,7 @@
                         <a href="#"><i class="glyphicon glyphicon-pencil"></i> Edit Issue</a>
                     </li>
                     <li>
-                        <a href="#"><i class="glyphicon glyphicon-search"></i> Search Issue</a>
+                        <a href="#/showDetails"><i class="glyphicon glyphicon-search"></i> Search Issue</a>
                     </li>
                     <li>
                         <a href="#"><i class="glyphicon glyphicon-th-list"></i> Show Feed</a>

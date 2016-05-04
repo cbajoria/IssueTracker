@@ -26,6 +26,9 @@
 	
 	<!-- configure static folders -->
 	<mvc:resources location="/components/" mapping="/components/**"/>
+	<!-- <mvc:resources location="/components/angular/controller/" mapping="/components/angular/controller/**"/>
+	<mvc:resources location="/components/angular/service/" mapping="/components/angular/service/**"/>
+	<mvc:resources location="/components/bootstrap/" mapping="/components/bootstrap/**"/> -->
 	<mvc:resources location="/fonts/" mapping="/fonts/**"/>
 	<mvc:resources location="/images/" mapping="/images/**"/>
 	<mvc:resources location="/scripts/" mapping="/scripts/**"/>
