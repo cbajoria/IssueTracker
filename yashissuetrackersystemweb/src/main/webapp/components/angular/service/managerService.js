@@ -27,6 +27,23 @@ angular.module('issueTrackingSystem.managerModule').factory('managerService',['$
 		                              return $q.reject(errResponse);
 		                      }
 		                );
-		      	}
+		      	},
+	      	
+	      	
+	      	searchIssue:function(searchText){
+				return $http.get(
+						'./getIssues/'
+						+ searchText)
+			 	.then(
+                	 function(response){
+                     	return response.data;
+                	 }, 
+                	 function(errResponse){
+                     	console.error('Error while searching issues');
+                     	return $q.reject(errResponse);
+                 	 }
+         		);
+		}
+	      	
 	  }
 }]);

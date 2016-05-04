@@ -29,4 +29,10 @@ public interface IssueService {
 	 public List<IssueForm> fetchAllIssues(Long userId);
 	
 	public int createIssue(IssueForm issueForm);
+
+	public List<IssueForm> getDefaultIssues();
+
+	public List<IssueForm> search(String searchText);
+	
+	
 }

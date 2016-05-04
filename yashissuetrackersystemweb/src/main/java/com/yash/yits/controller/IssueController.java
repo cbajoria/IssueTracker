@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -56,9 +58,18 @@ public class IssueController {
 		return formList;
 	}
 	
-	@RequestMapping(value="/showDetails",method=RequestMethod.GET)
-	public String showDetais(){
-		System.out.println("Hello");
+	
+	
+	/**
+	* showDetails method will display the issues which are created in the current week. This method will 
+	* call the IssueSearch service method to get the issues.
+	* @return String
+	*/
+
+	@RequestMapping(value="/showIssues",method=RequestMethod.GET)
+	public String showDetais(Model model){
+		List<IssueForm> issues=issueService.getDefaultIssues();
+		model.addAttribute("issueList",issues);
 		return"SearchIssue";
 	}
 	
@@ -76,4 +87,18 @@ public class IssueController {
 	}
 	
 	
+	/**
+	* searchIssues method will display the issues with respect to the search value. This method will 
+	* call the IssueSearch service method to get the issues.
+	* @return issuesList
+	*/
+	@ResponseBody
+	@RequestMapping(value="/getIssues/{searchText}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<IssueForm> searchIssues(@PathVariable("searchText") String searchText){
+
+			List<IssueForm> issues=issueService.search(searchText);
+		
+		return issues; 
+	}
+
 }

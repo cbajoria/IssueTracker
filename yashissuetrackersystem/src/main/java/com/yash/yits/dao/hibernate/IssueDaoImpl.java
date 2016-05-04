@@ -1,8 +1,10 @@
 package com.yash.yits.dao.hibernate;
 
+
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -18,6 +20,7 @@ import com.yash.yits.domain.IssueStatus;
 import com.yash.yits.domain.IssueType;
 import com.yash.yits.domain.Project;
 import com.yash.yits.domain.User;
+
 
 /**This is a IssueDao. This object will communicate with db.
  * This will be responsible for issue related operations.*/
@@ -100,5 +103,44 @@ public class IssueDaoImpl implements IssueDao{
 		List<Issue> listOfIssues=criteria.list();
 		session.close();
 		return listOfIssues;
+	}
+	/** search method is responsible for getting default objects from Issue class
+	 * @return Issue
+	 * */
+	
+	public List<Issue> getDefaultIssues(String date1, String date2) {
+		
+		
+		Session session=sessionFactory.openSession();
+		
+		Query query=session.createQuery("From Issue where issueCreationDate BETWEEN '"+date1+"' AND '"+date2+"'");
+		
+		List<Issue> issues=query.list();
+		
+		session.close();
+		return issues;
+	}
+	
+	/**
+	 * search method is responsible for searching objects in Issue class with respect to String 'searchText'
+	 * @return Issue
+	 */
+	public List<Issue> search(String searchText) {
+
+Session session=sessionFactory.openSession();
+		
+		Query query=session.createQuery("FROM Issue where "
+				+ "issueType=(Select issueId from IssueType where issueType LIKE '"+searchText+"%') OR "
+				+ "issuePriority=(Select issuePriorityId from IssuePriority where issuePriorityType LIKE '"+searchText+"%') OR "
+				+ "user=(Select userId from User where userName LIKE '"+searchText+"%') OR "
+				+ "issueStatus=(Select issueStatusId from IssueStatus where issueStatusType LIKE '"+searchText+"%') OR "
+				+ "project=(Select projectId from Project where projectName LIKE '"+searchText+"%') OR "
+				+ " issueAssignedStatus=(Select issueAssignmentStatusId from IssueAssignedStatus where issueAssignmentStatus LIKE '"+searchText+"%')");
+		
+		List<Issue> issues=query.list();
+		
+		session.close();
+		
+		return issues;
 	}
 }

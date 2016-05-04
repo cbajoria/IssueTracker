@@ -1,4 +1,4 @@
-<%--  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page isELIgnored="false"%>
 
 
@@ -37,9 +37,9 @@
 
 	
 	<div class="input-group">
-            <input type="text" class="form-control" ng-model="searchText" ng-change="change()" placeholder="Search" name="srch-term" id="srch-term">
+            <input type="text" class="form-control" ng-model="mc.searchText" ng-change="mc.change()" placeholder="Search" name="srch-term" id="srch-term">
             <div class="input-group-btn">
-                <button class="btn btn-primary" type="button" ng-click="getIssues()"><i class="glyphicon glyphicon-search"></i>&nbsp; Search</button>
+                <button class="btn btn-primary" type="button" ng-click="mc.getIssues()"><i class="glyphicon glyphicon-search"></i>&nbsp; Search</button>
             </div>
         </div>
 	
@@ -61,7 +61,7 @@
 					<th>Issue Priority</th>
 					<th>Issue Summary</th>
 					<th>Assigned To</th>
-					<th>Status</th>
+					<th>Issue Status</th>
 					<th>Project Name</th>
 					<th>Assigned Status</th>
 					<th colspan="2">Action</th>
@@ -70,16 +70,16 @@
 			<tbody>
 			<c:forEach items="${issueList}" var="issue">
 			<tr id="datatable">
-				<td><input id='radio' type='radio' value="${issue.id} "></td>
+				<td><input id='radio' type='radio' value="${issue.issueDetailId} "></td>
 
-				<td>${issue.type}</td>
+				<td>${issue.issueType.issueType}</td>
 				<td>${issue.issueCreationDate}</td>
-				<td>${issue.priority}</td>
-				<td>${issue.summary}</td>
-				<td>${issue.assignedTo}</td>
-				<td>${issue.status}</td>
-				<td>${issue.projectName}</td>
-				<td>${issue.assignedStatus}</td>
+				<td>${issue.issuePriority.issuePriorityType}</td>
+				<td>${issue.issueSummary}</td>
+				<td>${issue.user.userName}</td>
+				<td>${issue.issueStatus.issueStatusType}</td>
+				<td>${issue.project.projectName}</td>
+				<td>${issue.issueAssignedStatus.issueAssignmentStatus}</td>
 				<td><input type="button" value="Feed" class="btn btn-primary"></td>
 				<td><input type="button" value="View Details" class="btn btn-primary" ng-click="viewIssue()"></td>
 			</tr>
@@ -87,16 +87,16 @@
 			</tbody>
 	
 			<tr  ng-repeat="issue in issues">
-				<td><input type="radio" value={{issue.id}} ></td>
+				<td><input type="radio" value={{issue.issueDetailId}} ></td>
 
-				<td>{{issue.type}}</td>
+				<td>{{issue.issueType.issueType}}</td>
 				<td>{{issue.issueCreationDate}}</td>
-				<td>{{issue.priority}}</td>
-				<td>{{issue.summary}}</td>
-				<td>{{issue.assignedTo}}</td>
-				<td>{{issue.status}}</td>
-				<td>{{issue.projectName}}</td>
-				<td>{{issue.assignedStatus}}</td>
+				<td>{{issue.issuePriority.issuePriorityType}}</td>
+				<td>{{issue.issueSummary}}</td>
+				<td>{{issue.user.userName}}</td>
+				<td>{{issue.issueStatus.issueStatusType}}</td>
+				<td>{{issue.project.projectName}}</td>
+				<td>{{issue.issueAssignedStatus.issueAssignmentStatus}}</td>
 				<td><input type="button" value="Feed" class="btn btn-primary"></td>
 				<td><input type="button" value="View Details" class="btn btn-primary" ng-click="viewIssue()"></td>
 			</tr>

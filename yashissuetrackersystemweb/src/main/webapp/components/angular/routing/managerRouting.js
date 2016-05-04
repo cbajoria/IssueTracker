@@ -6,8 +6,8 @@ managerModule.config(function($routeProvider){
 				controller:'managerController as mc'
 			})
 			
-			.when('/showDetails',{
-				templateUrl:'showDetails',
-				controller:'IssueSearchController as isc'
+			.when('/showIssues',{
+				templateUrl:'showIssues',
+				controller:'managerController as mc'
 			})
 	});
