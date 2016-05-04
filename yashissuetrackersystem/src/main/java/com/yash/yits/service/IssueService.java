@@ -26,5 +26,7 @@ public interface IssueService {
 	
 	public List<UserForm> getAssigneeList();
 	
+	 public List<IssueForm> fetchAllIssues(Long userId);
+	
 	public int createIssue(IssueForm issueForm);
 }

@@ -24,6 +24,8 @@ public interface IssueDao {
 	
 	public List<User> getAssigneeList();
 	
+	public List<Issue> getAllIssue(Long userId);
+	
 	public int createIssue(Issue issue);
 	
 }

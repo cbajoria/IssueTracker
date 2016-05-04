@@ -92,4 +92,13 @@ public class IssueDaoImpl implements IssueDao{
 		session.close();
 		return 1;		// alter
 	}
+
+	public List<Issue> getAllIssue(Long userId) {
+		Session session=sessionFactory.openSession();
+		Criteria criteria = session.createCriteria(Issue.class);
+		criteria.add(Restrictions.eqOrIsNull("ISSUE_ASSIGNEEID", userId));
+		List<Issue> listOfIssues=criteria.list();
+		session.close();
+		return listOfIssues;
+	}
 }

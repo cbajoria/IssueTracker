@@ -1,8 +1,10 @@
 package com.yash.yits.service;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.beanutils.BeanUtils;
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -106,5 +108,32 @@ public class IssueServiceImpl implements IssueService{
 		}
 		int issueId = issueDao.createIssue(issue);
 		return 1;
+	}
+
+	public List<IssueForm> fetchAllIssues(Long userId) {
+		List<IssueForm> listOfIssueForm= new ArrayList<IssueForm>();
+		List<Issue> listOfissue=issueDao.getAllIssue(userId);
+		for(Issue issues:listOfissue){
+			
+			IssueForm issueForm= new IssueForm();
+			try 
+			{
+				BeanUtils.copyProperties(issueForm,issues);
+				listOfIssueForm.add(issueForm);
+			} 
+			catch (IllegalAccessException e) {
+			
+				e.printStackTrace();
+			} 
+			catch (InvocationTargetException e) {
+				
+				e.printStackTrace();
+			}
+			
+		}
+			
+		
+		
+		return listOfIssueForm;
 	}
 }

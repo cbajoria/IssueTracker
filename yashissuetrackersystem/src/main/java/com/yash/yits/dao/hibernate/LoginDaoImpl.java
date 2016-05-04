@@ -51,7 +51,7 @@ public class LoginDaoImpl implements LoginDao {
 		criteria.add(Restrictions.eqOrIsNull("userName", domainUser.getUserName()));
 		
 		List<User> FetchUserList=criteria.list();
-		
+		System.out.println("Size is----"+ FetchUserList.size());
 		if(FetchUserList.size()==1){
 			
 			System.out.println("User is alredy store in database");
